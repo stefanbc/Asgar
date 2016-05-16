@@ -4,11 +4,11 @@
 
 It's currently used to power [our dark future](https://ourdarkfuture.org/).
 
-![/assets/images/example.png]
+![assets/images/example.png]
 
-![/assets/images/article.png]
+![assets/images/article.png]
 
-![/assets/images/markdown.png]
+![assets/images/markdown.png]
 
 Fonts are included locally. There are no externally hosted librarires used, everything is hosted locally for maximum privacy. You can choose to shift these resources to external servers (like Google Fonts) if you'd like to sacrifice your users privacy for a small boost in page load time.
 
