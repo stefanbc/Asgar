@@ -1,0 +1,18 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+
+<div class="posts">
+      <br /><h2 class="list-headline"><a href="{{url}}">{{{title}}}</a></h2>
+	  {{#if image}}
+		<div class="entry-media">
+			<img src="{{image}}">
+		</div>
+	  {{else}}
+	  {{/if}}
+      <p>{{excerpt words="106"}}... <a class="read-more" href="{{url}}">read more &raquo;</a>
+</div>
+
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}
