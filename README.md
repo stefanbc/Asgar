@@ -20,7 +20,7 @@ Favicon can be customized in /assets/images/favicon.ico.
 
 Featured images used in post listings (index, tax pages, etc) are pulled from the metadata image. It doesn't use any width resizing, but resizes to a height of 230px. Uploading a 230x800px image is suggested for best results.
 
-It's currently used to power [our dark future](https://ourdarkfuture.org/) id you'd like to see it in action. Example pages are below: 
+It's currently used to power [our dark future](https://ourdarkfuture.org/) if you'd like to see it in action. Example pages are below: 
 
 ![](https://raw.githubusercontent.com/ourdarkfuture/kakotopia/master/assets/images/example.png)
 
