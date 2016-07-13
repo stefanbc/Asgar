@@ -2,7 +2,7 @@
 
 [Kakotopia](https://en.wiktionary.org/wiki/kakotopia) is a clean, minimal, light Ghost blog theme built off the [Skeleton](http://getskeleton.com/) framework and the default Casper theme. The theme is fully responsive.
 
-Fonts are included locally. There are no externally hosted librarires used, everything is hosted locally for maximum privacy. You can choose to shift these resources to external servers (like Google Fonts) if you'd like to sacrifice your users privacy for a small boost in page load time.
+Fonts are included locally. There are no externally hosted libraries used, everything is hosted locally for maximum privacy. This theme works perfectly without javascript. You can choose to shift these resources to external servers (like Google Fonts) if you'd like to sacrifice your users privacy for a small boost in page load time.
 
 ##Installation
 
