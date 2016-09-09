@@ -1,8 +1,17 @@
 {{!< default}}
-
     <div class="container">
-
         {{! The tag below includes the post loop - partials/loop.hbs }}
         {{> "loop"}}
-
     </div>
+
+{{#contentFor "meta_index"}}
+  {{! Google+}}
+  <meta itemprop="name" content="{{meta_title}}"/>
+  <meta itemprop="description" content="{{meta_description}}"/>
+  <meta itemprop="image" content="{{@blog.url}}{{asset '/images/logo.png'}}"/>
+  {{! Twitter}}
+  <meta name="twitter:site" content="stefanbc"/>
+  <meta name="twitter:creator" content="stefanbc"/>
+  <meta name="twitter:image:src" content="{{@blog.url}}{{asset '/images/logo.png'}}"/>
+  <meta name="twitter:domain" content="{{@blog.url}}{{url absolute="true"}}"/>
+{{/contentFor}}

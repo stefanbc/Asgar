@@ -77,3 +77,15 @@
 </aside>
 
 {{/post}}
+
+{{#contentFor "meta_post"}}
+  {{! Google+}}
+  <meta itemprop="name" content="{{meta_title}}"/>
+  <meta itemprop="description" content="{{meta_description}}"/>
+  <meta itemprop="image" content="{{@blog.url}}{{image}}"/>
+  {{! Twitter}}
+  <meta name="twitter:site" content="stefanbc"/>
+  <meta name="twitter:creator" content="stefanbc"/>
+  <meta name="twitter:image:src" content="{{@blog.url}}{{image}}"/>
+  <meta name="twitter:domain" content="{{@blog.url}}{{url absolute="true"}}"/>
+{{/contentFor}}
