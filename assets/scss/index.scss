@@ -1,0 +1,182 @@
+//colors
+$color_0: #222;
+$color_1: #fff;
+$color_2: #eee;
+$color_3: #33c3f0;
+$color_4: #666;
+$color_5: #1eaedb;
+$color_6: #333;
+
+//fonts
+$font_0: Raleway;
+$font_1: sans-serif;
+
+//@extend-elements
+//original selectors
+//.navbar, .navbar-spacer
+%extend_1 {
+	display: block;
+	width: 100%;
+	height: 6.5rem;
+	background: $color_1;
+	z-index: 99;
+	border-top: 1px solid $color_2;
+	border-bottom: 1px solid $color_2;
+}
+
+
+* {
+	font-family: $font_0, $font_1;
+}
+a {
+	text-decoration: none;
+	color: $color_0;
+}
+.container {
+	max-width: 800px;
+}
+.header {
+	margin-top: 5rem;
+	text-align: center;
+}
+.navbar {
+	@extend %extend_1;
+	+ .docs-section {
+		border-top-width: 0;
+	}
+	> .container {
+		width: 100%;
+	}
+}
+.navbar-spacer {
+	@extend %extend_1;
+	display: none;
+}
+.navbar-list {
+	list-style: none;
+	margin-bottom: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.navbar-item {
+	position: relative;
+	margin-bottom: 0;
+}
+.navbar-link {
+	text-transform: uppercase;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: .2rem;
+	margin-right: 35px;
+	text-decoration: none;
+	line-height: 6.5rem;
+	color: $color_0;
+	&.active {
+		color: $color_3;
+	}
+}
+.has-docked-nav {
+	.navbar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		> .container {
+			width: 80%;
+		}
+	}
+	.navbar-spacer {
+		display: block;
+	}
+}
+.post-meta {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: 600;
+	color: $color_4;
+	font-weight: 300;
+}
+.post-tags {
+	text-align: left;
+	color: $color_4;
+}
+.post-share {
+	text-align: right;
+	font-size: 1.2em;
+	margin-top: 3px;
+	font-weight: 300;
+	a {
+		color: $color_4;
+		font-weight: 400;
+		&:hover {
+			color: $color_5;
+		}
+	}
+}
+.post-spacer {
+	display: block;
+	width: 100%;
+	height: 1rem;
+	background: $color_1;
+	z-index: 99;
+	border-bottom: 1px solid $color_2;
+}
+.authorimage {
+	width: 80px;
+	height: 80px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50%;
+	background-size: cover !important;
+	background-position: center center !important;
+	margin-right: 17px;
+	float: left;
+}
+@media(min-width: 550px) {
+	.header {
+		margin-top: 5rem;
+	}
+	.value-props {
+		margin-top: 9rem;
+		margin-bottom: 7rem;
+	}
+	.value-img {
+		margin-bottom: 1rem;
+	}
+	.example-grid {
+		.column {
+			margin-bottom: 1.5rem;
+		}
+		.columns {
+			margin-bottom: 1.5rem;
+		}
+	}
+	.docs-section {
+		padding: 6rem 0;
+	}
+	.example-send-yourself-copy {
+		float: right;
+		margin-top: 12px;
+	}
+	.example-screenshot-wrapper {
+		position: absolute;
+		width: 48%;
+		height: 100%;
+		left: 0;
+		max-height: none;
+	}
+}
+.website a {
+	font-weight: 400;
+}
+.author-name a {
+	font-weight: 400;
+}
+.entry-media > img {
+	object-fit: cover;
+	max-height: 230px;
+}
+.list-headline a {
+	color: $color_6;
+	text-decoration: none;
+	font-weight: 300;
+}

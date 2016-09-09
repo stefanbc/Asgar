@@ -1,23 +1,22 @@
 {{!< default}}
-
-  <section class="header">
-      <h1 class="title">{{@blog.title}}</h1>
-  </section>
-  
-    {{navigation}}
   
   {{#post}}
   
   <div class="container">
-  <br /><br />
-      <h2>{{{title}}}</h2>
-	  <section class="post-meta">
+    <br /><br />
+    {{#if image}}
+        <div class="entry-media">
+            <img src="{{image}}">
+        </div>
+	{{/if}}
+    <h2>{{{title}}}</h2>
+    <section class="post-meta">
         <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-      </section>
+    </section>
   </div>
   
   <div class="container">
-  {{content}}
+    {{content}}
   </div>
   <div class="container">
 		<div class="post-spacer"></div>

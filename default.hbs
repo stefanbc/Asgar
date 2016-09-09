@@ -1,66 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
-  <!-- META
-  ------------------------- -->
+  <head>
+    <!-- META
+    ------------------------- -->
     {{! Page Meta }}
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
 
-  <!-- Mobile Specific Metas
-  ------------------------- -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile Specific Metas
+    ------------------------- -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  ------------------------- -->
+    <!-- FONT
+    ------------------------- -->
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway:300,400,600">
 
 
-  <!-- CSS
-  ------------------------- -->
-  {{! Styles'n'Scripts }}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/skeleton.css"}}" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/custom.css"}}" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/font-awesome.min.css"}}" />
-  
-  <!-- JS
-  ------------------------- -->
+    <!-- CSS
+    ------------------------- -->
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/style.min.css"}}" />
+    
+    <!-- JS
+    ------------------------- -->
 
-  
-
-  <!-- FAVICON
-  ------------------------- -->
-  <link rel="shortcut icon" href="{{asset "/images/favicon.ico"}}">
-  
-  {{ghost_head}}
-  </head>
-
-  <!-- BODY
-  ------------------------- -->
-      
+    <!-- FAVICON
+    ------------------------- -->
+    <link rel="shortcut icon" href="{{asset "/images/favicon.ico"}}">
+    
+    {{ghost_head}}
+  </head>      
   <body class="{{body_class}} nav-closed">
-
-  
-		<div class="container">
-			
-			{{{body}}}
-			
-      
-
-
-      <div class="container">
-        <footer id="footer" class="twelve columns">
-		<br />
-		 <br />
-         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> <span style="font-size: .8em; font-weight: 600;"><a href="https://creativecommons.org/licenses/by-nc-sa/2.0/">CC BY-NC-SA</a></span> {{date format="YYYY"}}</section>
-		 <a href="https://twitter.com/ourdarkfuture"><i class="fa fa-twitter" aria-hidden="true"></i></a> <a href="{{@blog.url}}/rss"><i class="fa fa-rss" aria-hidden="true"></i></a>
-		 <br />
-		 <br />
-        </footer>
-      </div> <!-- end footer div.container -->
+    <div class="container">
+      {{> "header"}}
+      {{{body}}}
+      {{> "footer"}}
     </div>  <!-- end footer div.table-block -->
-  
-  {{ghost_foot}}
-</body>
+    {{ghost_foot}}
+  </body>
 </html>
