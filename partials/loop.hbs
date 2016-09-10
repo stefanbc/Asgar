@@ -1,10 +1,14 @@
 {{! This is the post loop - each post will be output using this markup }}
+<section class="posts">
 {{#foreach posts}}
-	<div class="posts">
-		<br /><h4 class="list-headline"><a href="{{url}}">{{{title}}}</a></h4>
-		<p>{{excerpt words="50"}}... <a class="read-more" href="{{url}}">read more &raquo;</a>
-	</div>
+	<article>
+		<h4 class="list-headline">
+			<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+		</h4>
+		<p>{{excerpt words="50"}}... <a class="read-more" href="{{url}}">read more &raquo;</a></p>
+	</article>
 {{/foreach}}
+</section>
 
 {{! Previous/next page links - displayed on every page }}
 {{pagination}}

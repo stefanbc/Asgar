@@ -1,11 +1,9 @@
-  <div class="navbar-spacer"></div>
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar-list" >
-		  {{#foreach navigation}}
-          <li class="navbar-item"><a class="navbar-link" href="{{url absolute="true"}}">{{label}}</a></li>
-		  {{/foreach}}
-        </ul>
-      </div>
-    </nav>
-  </div>
+  <nav>
+    <ul>
+    {{#foreach navigation}}
+        <li>
+          <a class="navbar-link" href="{{url absolute="true"}}" title="{{label}}">{{label}}</a>
+        </li>
+    {{/foreach}}
+    </ul>
+  </nav>

@@ -1,0 +1,40 @@
+//globals
+body {
+	font-family: $font_0;
+}
+::-moz-selection { background: $color_4; }
+::selection { background: $color_4; }
+a {
+	text-decoration: none;
+    color: $color_0;
+	@extend %transition;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-nowrap {
+    white-space: nowrap;
+}
+.text-lowercase {
+    text-transform: lowercase;
+}
+.text-uppercase {
+    text-transform: uppercase;
+}
+.text-capitalize {
+    text-transform: capitalize;
+}

@@ -27,9 +27,11 @@
     {{ghost_head}}
   </head>      
   <body class="{{body_class}} nav-closed">
-    <div class="container">
+    <div id="content-wrapper" class="container">
       {{> "header"}}
-      {{{body}}}
+      <main rol="main">
+        {{{body}}}
+      </main>
       {{> "footer"}}
     </div>
     {{ghost_foot}}

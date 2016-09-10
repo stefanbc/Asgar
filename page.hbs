@@ -1,21 +1,10 @@
 {{!< default}}
-  
-  {{#post}}
-    
-    <div class="container">
-      <br />
-      <br />
-      <h2>{{{title}}}</h2>
-    </div>
-    
-    <div class="container">
-      {{content}}
-    </div>
-    <div class="container">
-    <div class="post-spacer"></div>
-    <br />
-    <br />
-  {{/post}}
+{{#post}}
+  <article class="page-wrapper">
+    <h2>{{{title}}}</h2>
+    {{content}}
+  </article>
+{{/post}}
 
 {{#contentFor "meta_page"}}
   {{! Google+}}

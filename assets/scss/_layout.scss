@@ -1,0 +1,97 @@
+//layout
+.container {
+	max-width: 800px;
+}
+
+header {
+	margin: 5rem 0;
+
+    nav {
+        height: 6.5rem;
+        border-top: 1px solid $color_2;
+        border-bottom: 1px solid $color_2;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            li {
+                margin-bottom: 0;
+
+                .navbar-link {
+                    text-transform: uppercase;
+                    font-size: 11px;
+                    font-weight: 600;
+                    letter-spacing: .2rem;
+                    margin-right: 35px;
+                    line-height: 6.5rem;
+                }
+            }
+        }
+    }
+}
+
+footer {
+	margin: 3rem 0 6rem 0;
+	padding-top: 3rem;
+    border-top: 1px solid #eee;
+}
+
+.post-meta {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-weight: 600;
+	color: $color_4;
+	font-weight: 300;
+}
+.post-tags {
+	text-align: left;
+	color: $color_4;
+}
+.post-share {
+	text-align: right;
+	font-size: 1.2em;
+	margin-top: 3px;
+	font-weight: 300;
+	a {
+		color: $color_4;
+		font-weight: 400;
+		&:hover {
+			color: $color_5;
+		}
+	}
+}
+.post-spacer {
+	display: block;
+	width: 100%;
+	height: 1rem;
+	background: $color_1;
+	z-index: 99;
+	border-bottom: 1px solid $color_2;
+}
+.authorimage {
+	width: 80px;
+	height: 80px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 50%;
+	background-size: cover !important;
+	background-position: center center !important;
+	margin-right: 17px;
+	float: left;
+}
+.website a {
+	font-weight: 400;
+}
+.author-name a {
+	font-weight: 400;
+}
+.entry-media > img {
+	object-fit: cover;
+	max-height: 230px;
+}
+.list-headline a {
+	color: $color_6;
+	text-decoration: none;
+	font-weight: 300;
+}
