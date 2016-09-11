@@ -2,12 +2,12 @@
 {{#post}}
   <article class="post-wrapper">
     {{#if image}}
-        <section class="post-media">
+        <section class="post-media text-center">
             <img src="{{image}}">
         </section>
 	{{/if}}
-    <h2>{{{title}}}</h2>
-    <section class="post-meta">
+    <h2 class="post-title text-center">{{{title}}}</h2>
+    <section class="post-meta text-center">
         <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
     </section>
     <section class="post-content">

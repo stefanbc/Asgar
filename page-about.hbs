@@ -1,0 +1,38 @@
+{{!< default}}
+{{#post}}
+  <article class="page-wrapper">
+    {{#author}}
+        <div class="row">
+            <div class="two columns">
+                <img class="authorimage" src="{{image}}">
+            </div>
+            <div class="four columns">
+                <h4>
+                    <span class="author-name">
+                        <a href="{{url}}">{{name}}</a>
+                    </span>
+                </h4>
+                <span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> | <span class="website"><a href="{{website}}">{{website}}</a></span>
+            </div>
+            <div class="six columns">
+                <p>{{bio}}</p>
+            </div>
+        </div>
+    {{/author}}
+    <h2>{{{title}}}</h2>
+    {{content}}
+    {{> "social"}}
+  </article>
+{{/post}}
+
+{{#contentFor "meta_page"}}
+  {{! Google+}}
+  <meta itemprop="name" content="{{meta_title}}"/>
+  <meta itemprop="description" content="{{meta_description}}"/>
+  <meta itemprop="image" content="{{@blog.url}}{{asset '/images/logo.png'}}"/>
+  {{! Twitter}}
+  <meta name="twitter:site" content="stefanbc"/>
+  <meta name="twitter:creator" content="stefanbc"/>
+  <meta name="twitter:image:src" content="{{@blog.url}}{{asset '/images/logo.png'}}"/>
+  <meta name="twitter:domain" content="{{@blog.url}}{{url absolute="true"}}"/>
+{{/contentFor}}
