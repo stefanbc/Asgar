@@ -1,32 +1,26 @@
 //media queries
-@media(min-width: 550px) {
-	.value-props {
-		margin-top: 9rem;
-		margin-bottom: 7rem;
-	}
-	.value-img {
-		margin-bottom: 1rem;
-	}
-	.example-grid {
-		.column {
-			margin-bottom: 1.5rem;
-		}
-		.columns {
-			margin-bottom: 1.5rem;
+@media all and (max-width:480px) {
+	main {
+		.post-wrapper {
+			.post-extra {
+				.post-share {
+					text-align: center;
+				}
+			}
+
+			.author-meta {
+				text-align: center;
+			}
 		}
 	}
-	.docs-section {
-		padding: 6rem 0;
-	}
-	.example-send-yourself-copy {
-		float: right;
-		margin-top: 12px;
-	}
-	.example-screenshot-wrapper {
-		position: absolute;
-		width: 48%;
-		height: 100%;
-		left: 0;
-		max-height: none;
+	
+	footer {
+		.subscribe {
+			text-align: center;
+
+			.text-right {
+				text-align: center;
+			}
+		}
 	}
 }
