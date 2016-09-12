@@ -1,89 +1,83 @@
 {{!< default}}
 {{#post}}
-  <article class="post-wrapper">
-    {{#if image}}
-        <section class="post-media text-center">
-            <img src="{{image}}">
+    <article class="post-wrapper">
+        {{#if image}}
+            <section class="post-media text-center">
+                <img src="{{image}}" class="cover-image">
+            </section>
+        {{/if}}
+
+        <h2 class="post-title text-center">{{{title}}}</h2>
+
+        <section class="post-meta text-center">
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
         </section>
-	{{/if}}
-    <h2 class="post-title text-center">{{{title}}}</h2>
-    <section class="post-meta text-center">
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-    </section>
-    <section class="post-content">
-        {{content}}
-    </section>
-    <div class="post-spacer"></div>
-    <div>
-        <div class="row">
-            <div class="six columns">
-                <section class="post-tags">
-                    {{#if tags}}<div class="post-meta tags"><i class="fa fa-tags"></i> {{tags}}</div>{{/if}}
-                </section>
+
+        <section class="post-content">
+            {{content}}
+        </section>
+
+        <div class="post-spacer"></div>
+
+        <section class="post-extra">
+            <div class="row">
+                <div class="eight columns">
+                    <section class="post-tags">
+                        {{#if tags}}
+                            <div class="post-meta tags"><i class="fa fa-tags"></i> {{tags}}</div>
+                        {{/if}}
+                    </section>
+                </div>
+                <div class="four columns">
+                    {{> "share"}}
+                </div>
             </div>
-            <div class="six columns">
-                <section class="post-share">
-                    <a class="link twitter" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"><i class="fa fa-twitter"></i></a>
-                    <a class="link facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"><i class="fa fa-facebook"></i></a>
-                    <a class="link reddit" href="http://www.reddit.com/submit?url={{url absolute="true"}}"><i class="fa fa-reddit"></i></a>
-                    <a class="link hackernews" href="http://news.ycombinator.com/submitlink?u={{url absolute="true"}}"><i class="fa fa-hacker-news"></i></a>          
-                </section>
-            </div>
+        </section>
+        
+        <section class="author-meta">
             {{#author}}
             <div class="row">
                 <div class="two columns">
-                    <img class="authorimage" src="{{image}}">
+                    <img class="author-image" src="{{image}}" alt="{{name}}">
                 </div>
                 <div class="four columns">
-                    <h4>
-                        <span class="author-name">
-                            <a href="{{url}}">{{name}}</a>
-                        </span>
+                    <h4 class="author-name">
+                        <a href="{{url}}">{{name}}</a>
                     </h4>
-                    <span class="author-location"><i class="fa fa-map-marker"></i> {{location}}</span> | <span class="website"><a href="{{website}}">{{website}}</a></span>
+                    <a href="{{twitter_url}}">{{twitter}}</a>
                 </div>
                 <div class="six columns">
                     <p>{{bio}}</p>
                 </div>
             </div>
             {{/author}}
-            <div class="post-spacer"></div>
-            <aside class="read-next">
-                <div class="row">
-                    <div class="six columns">
-                        {{#next_post}}
-                            <a class="read-next-story" href="{{url}}">
-                                <section class="post">
-                                    <h4>{{title}}</h4>
-                                    <p>{{excerpt words="19"}}&hellip;</p>
-                                </section>
-                            </a>
-                        {{/next_post}}
-                    </div>
-                    <div class="six columns">
-                        {{#prev_post}}
-                            <a class="read-next-story prev" href="{{url}}">
-                                <section class="post">
-                                    <h4>{{title}}</h4>
-                                    <p>{{excerpt words="19"}}&hellip;</p>
-                                </section>
-                            </a>
-                        {{/prev_post}}
-                    </div>
+        </section>
+
+        <div class="post-spacer"></div>
+
+        <aside class="read-next">
+            <div class="row">
+                <div class="six columns">
+                    {{#next_post}}
+                        <a class="read-next-story" href="{{url}}">
+                            <section class="post">
+                                <h4>{{title}}</h4>
+                                <p>{{excerpt words="19"}}&hellip;</p>
+                            </section>
+                        </a>
+                    {{/next_post}}
                 </div>
-            </aside>
-        </div>
+                <div class="six columns">
+                    {{#prev_post}}
+                        <a class="read-next-story prev" href="{{url}}">
+                            <section class="post">
+                                <h4>{{title}}</h4>
+                                <p>{{excerpt words="19"}}&hellip;</p>
+                            </section>
+                        </a>
+                    {{/prev_post}}
+                </div>
+            </div>
+        </aside>
   </article>
 {{/post}}
-
-{{#contentFor "meta_post"}}
-  {{! Google+}}
-  <meta itemprop="name" content="{{meta_title}}"/>
-  <meta itemprop="description" content="{{meta_description}}"/>
-  <meta itemprop="image" content="{{@blog.url}}{{image}}"/>
-  {{! Twitter}}
-  <meta name="twitter:site" content="stefanbc"/>
-  <meta name="twitter:creator" content="stefanbc"/>
-  <meta name="twitter:image:src" content="{{@blog.url}}{{image}}"/>
-  <meta name="twitter:domain" content="{{@blog.url}}{{url absolute="true"}}"/>
-{{/contentFor}}
