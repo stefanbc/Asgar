@@ -124,6 +124,10 @@ main {
         height: 1rem;
         z-index: 99;
         border-bottom: 1px solid $color_1;
+
+        + .post-content {
+            margin-top: 20px;
+        }
     }
 }
 
