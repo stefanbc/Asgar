@@ -1,0 +1,18 @@
+{{!< default}}
+<section class="author-meta">
+    {{#author}}
+    <div class="row">
+        <div class="two columns">
+            <img class="author-image" src="{{image}}" alt="{{name}}">
+        </div>
+        <div class="ten columns">
+            <h4 class="author-name">
+                <a href="{{url}}">{{name}}</a>
+            </h4>
+            <p>{{bio}}</p>
+        </div>
+    </div>
+    {{/author}}
+</section>
+{{! The tag below includes the post loop - partials/loop.hbs }}
+{{> "loop"}}

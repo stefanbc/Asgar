@@ -96,23 +96,25 @@ main {
 
         .author-meta {
             margin-top: 15px;
-
-            .author-image {
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                background-size: cover !important;
-                background-position: center center !important;
-                margin-right: 17px;
-            }
-
-            .author-name {
-                margin-bottom: 0;
-            }
         }
 
         aside.read-next {
             margin-top: 20px;
+        }
+    }
+
+    .author-meta {
+        .author-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-size: cover !important;
+            background-position: center center !important;
+            margin-right: 17px;
+        }
+
+        .author-name {
+            margin-bottom: 0;
         }
     }
 
