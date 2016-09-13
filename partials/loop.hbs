@@ -1,14 +1,30 @@
 {{! This is the post loop - each post will be output using this markup }}
+{{! Featured posts}}
 <section class="posts">
 {{#foreach posts}}
-	<article>
-		<h4 class="list-headline">
-			<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
-		</h4>
-		<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
-	</article>
+	{{#if featured}}
+		<article class="featured-post">
+			<h4 class="list-headline">
+				<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+			</h4>
+			<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
+		</article>
+	{{/if}}
+{{/foreach}}
+
+{{! Non-featured posts}}
+{{#foreach posts}}
+	{{#unless featured}}
+		<article>
+			<h4 class="list-headline">
+				<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+			</h4>
+			<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
+		</article>
+	{{/unless}}
 {{/foreach}}
 </section>
+
 {{! Previous/next page links - displayed on every page }}
 <section class="blog-navigation text-center">
 	{{pagination}}

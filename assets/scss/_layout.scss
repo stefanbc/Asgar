@@ -43,8 +43,14 @@ main {
         article {
             margin-bottom: 4rem;
 
+            &.featured-post {
+                border: 1px solid $color_1;
+                background: $color_1;
+                padding: 3rem;
+            }
+
             .continue-reading {
-                font-weight: 400;
+                text-decoration: underline;
             }
         }
     }
