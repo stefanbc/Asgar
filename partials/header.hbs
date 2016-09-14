@@ -1,4 +1,9 @@
 <header class="text-center">
+    {{#if @blog.logo}}
+    <a class="logo-link" title="{{@blog.title}}" href="{{@blog.url}}">
+        <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="blog-logo" />
+    </a>
+    {{/if}}
     <h1 class="title">
         <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
     </h1>

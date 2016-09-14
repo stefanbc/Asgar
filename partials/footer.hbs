@@ -2,14 +2,12 @@
     {{#if @labs.subscribers}}
     <section class="subscribe">
         <div class="row">
-            <div class="one-half column text-right">
+            <div class="twelve columns text-center">
                 <h3>Subscribe</h3>
-                <p>Get the latest posts delivered right to your inbox or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" title="RSS" class="text-underline">via RSS</a> with Feedly!</p>
-            </div>
-            <div class="one-half column">
                 {{subscribe_form placeholder="email address"}}
             </div>
         </div>
+        <p class="text-center">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" title="RSS" class="text-underline">via RSS</a> with Feedly!</p>
     </section>
     {{/if}}
     <section class="copyright text-center">

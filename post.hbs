@@ -24,7 +24,7 @@
                 <div class="eight columns">
                     <section class="post-tags">
                         {{#if tags}}
-                            <div class="post-meta tags"><i class="fa fa-tags"></i> {{tags}}</div>
+                            <i class="fa fa-tags"></i> {{tags}}
                         {{/if}}
                     </section>
                 </div>
@@ -40,13 +40,10 @@
                 <div class="two columns">
                     <img class="author-image" src="{{image}}" alt="{{name}}">
                 </div>
-                <div class="four columns">
+                <div class="ten columns">
                     <h4 class="author-name">
-                        <a href="{{url}}">{{name}}</a>
+                        <a href="{{url}}">{{name}}</a> <small><a href="{{twitter_url}}">{{twitter}}</a></small>
                     </h4>
-                    <a href="{{twitter_url}}">{{twitter}}</a>
-                </div>
-                <div class="six columns">
                     <p>{{bio}}</p>
                 </div>
             </div>
