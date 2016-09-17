@@ -4,11 +4,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{#if meta_description}}
-    <meta name="description" content="{{meta_description}}">
-    {{/if}}
-
     {{!-- Extra meta --}}
+    <meta name="description" content="{{#if meta_description}}{{meta_description}}{{else}}Web builder extraordinaire, developer, community enthusiast! Also speaker and maker of various open source projects!{{/if}}">
     <meta name="keywords" content="{{#if tags}}{{tags}}{{else}}blog, developer, code, adventures, how to, tutorials, open source, tools, wordpress, hacking{{/if}}" />
     <meta name="author" content="{{@blog.title}}" />
     <meta name="robots" content="index, follow" />
