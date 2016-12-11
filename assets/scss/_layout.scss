@@ -86,8 +86,20 @@ main {
                 display: block;
                 margin: 0 auto;
             }
+
+            ul {
+                list-style-type: initial;
+            }
+
+            ul,
+            ol {
+                list-style-position: initial;
+                margin-left: 30px;
+                padding-left: 5px;
+                margin-bottom: 2.5rem;
+            }
         }
-        
+
         .post-extra {
             margin-top: 3rem;
 
