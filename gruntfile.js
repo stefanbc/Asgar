@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
-        
+
         clean: {
             build: {
                 src: [
@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                 ]
             }
         },
-        
+
         sass: {
             build: {
                 options: {
@@ -24,10 +24,11 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         watch: {
             options: {
-                atBegin: true
+                atBegin: true,
+                livereload: true
             },
             files: [
                 './assets/scss/*.scss'
@@ -35,10 +36,10 @@ module.exports = function(grunt) {
             tasks: ['clean:build', 'sass:build']
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    
+
     grunt.registerTask('default', ['clean:build', 'sass:build']);
 };

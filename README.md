@@ -30,6 +30,14 @@ You can then install all the theme dependencies using:
 npm install
 ```
 
+If you want to have the livereload feature enable just add this line
+
+```
+<script src="//localhost:35729/livereload.js"></script>
+```
+
+in the `default.hbs` file before the end `</body>`.
+
 Available Grunt tasks:
 
 * `grunt` - will build the whole theme.

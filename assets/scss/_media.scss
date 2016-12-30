@@ -1,5 +1,5 @@
 //media queries
-@media all and (max-width:480px) {
+@media all and (max-width: 480px) {
 	main {
 		.post-wrapper {
 			.post-extra {
@@ -12,14 +12,14 @@
 				text-align: center;
 			}
 		}
-		
+
 		.author-meta {
 			.author-image {
 				margin-right: 0;
 			}
 		}
 	}
-	
+
 	footer {
 		.subscribe {
 			text-align: center;
@@ -28,7 +28,7 @@
 				text-align: center;
 			}
 		}
-		
+
 		form {
 			margin-left: 0;
 
