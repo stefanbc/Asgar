@@ -103,6 +103,12 @@ main {
             code {
                 overflow: auto;
             }
+
+            blockquote {
+                border-left: 4px solid #ddd;
+                margin-left: 2rem;
+                padding-left: 2rem;
+            }
         }
 
         .post-extra {
