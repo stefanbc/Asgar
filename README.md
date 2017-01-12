@@ -1,6 +1,8 @@
 stefan-log
 ==
 
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+
 Ghost theme originally based on [Kakotopia](https://en.wiktionary.org/wiki/kakotopia), used on [my personal website](http://stefancosma.xyz).
 
 Customization
