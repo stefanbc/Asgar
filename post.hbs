@@ -1,9 +1,9 @@
 {{!< default}}
 {{#post}}
     <article class="post-wrapper">
-        {{#if image}}
+        {{#if feature_image}}
             <section class="post-media text-center">
-                <img src="{{image}}" class="cover-image">
+                <img src="{{img_url feature_image}}" class="cover-image">
             </section>
         {{/if}}
 
@@ -33,12 +33,12 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="author-meta">
             {{#author}}
             <div class="row">
                 <div class="two columns">
-                    <img class="author-image" src="{{image}}" alt="{{name}}">
+                    <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
                 </div>
                 <div class="ten columns">
                     <h4 class="author-name">

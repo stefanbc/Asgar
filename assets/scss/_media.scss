@@ -1,40 +1,40 @@
 //media queries
 @media all and (max-width: 480px) {
-	main {
-		.post-wrapper {
-			.post-extra {
-				.post-share {
-					text-align: center;
-				}
-			}
+    main {
+        .post-wrapper {
+            .post-extra {
+                .post-share {
+                    text-align: center;
+                }
+            }
 
-			.author-meta {
-				text-align: center;
-			}
-		}
+            .author-meta {
+                text-align: center;
+            }
+        }
 
-		.author-meta {
-			.author-image {
-				margin-right: 0;
-			}
-		}
-	}
+        .author-meta {
+            .author-image {
+                margin-right: 0;
+            }
+        }
+    }
 
-	footer {
-		.subscribe {
-			text-align: center;
+    footer {
+        .subscribe {
+            text-align: center;
 
-			.text-right {
-				text-align: center;
-			}
-		}
+            .text-right {
+                text-align: center;
+            }
+        }
 
-		form {
-			margin-left: 0;
+        form {
+            margin-left: 0;
 
-			.form-group {
-				margin-bottom: 10px;
-			}
-		}
-	}
+            .form-group {
+                margin-bottom: 10px;
+            }
+        }
+    }
 }

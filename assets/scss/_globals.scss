@@ -1,61 +1,78 @@
 //globals
 body {
-	font-family: $font_0;
+    font-family: $font-0;
     font-weight: 300;
     font-size: 1.6em;
 }
-::-moz-selection { background: $color_3; }
-::selection { background: $color_3; }
+
+::selection { background: $color-3; }
+
 a {
-	text-decoration: none;
-    color: $color_0;
+    text-decoration: none;
+    color: $color-0;
     cursor: pointer;
-	@extend %transition;
+    @extend %transition;
 
     &:hover {
-        color: $color_4;
+        color: $color-4;
     }
 }
-input[type=email]:focus, 
-input[type=number]:focus, 
-input[type=password]:focus, 
-input[type=search]:focus, 
-input[type=tel]:focus, 
-input[type=text]:focus, 
-input[type=url]:focus, 
-select:focus, 
+
+select:focus,
 textarea:focus {
-    border: 1px solid $color_2;
+    border: 1px solid $color-2;
 }
+
+input {
+    &[type='email']:focus,
+    &[type='number']:focus,
+    &[type='password']:focus,
+    &[type='search']:focus,
+    &[type='tel']:focus,
+    &[type='text']:focus,
+    &[type='url']:focus {
+        border: 1px solid $color-2;
+    }
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 .text-left {
     text-align: left;
 }
+
 .text-right {
     text-align: right;
 }
+
 .text-center {
     text-align: center;
 }
+
 .text-justify {
     text-align: justify;
 }
+
 .text-nowrap {
     white-space: nowrap;
 }
+
 .text-lowercase {
     text-transform: lowercase;
 }
+
 .text-uppercase {
     text-transform: uppercase;
 }
+
 .text-capitalize {
     text-transform: capitalize;
 }
+
 .text-underline {
     text-decoration: underline;
 }

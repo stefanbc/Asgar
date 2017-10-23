@@ -1,26 +1,48 @@
 module.exports = function(grunt) {
 
     require('time-grunt')(grunt);
+    require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
 
         clean: {
-            build: {
+            default: {
                 src: [
                     './assets/css/*'
                 ]
             }
         },
 
+        sasslint: {
+            options: {
+                configFile: './.sass-lint.yml',
+            },
+            target: ['./assets/scss/**/*.scss']
+        },
+
         sass: {
-            build: {
-                options: {
-                    style     : 'compressed',
-                    sourcemap : 'none'
-                },
+            default: {
+                options: { sourceMap : 'none' },
                 files: {
                     './assets/css/style.min.css' : './assets/scss/index.scss'
+                }
+            }
+        },
+
+        autoprefixer: {
+            default: {
+                options: { browsers : ['last 4 versions'] },
+                files: {
+                    './assets/css/style.min.css' : './assets/css/style.min.css'
+                },
+            },
+        },
+
+        cssmin: {
+            default: {
+                files: {
+                    './assets/css/style.min.css' : './assets/css/style.min.css'
                 }
             }
         },
@@ -30,10 +52,16 @@ module.exports = function(grunt) {
                 atBegin: true,
                 livereload: true
             },
-            files: [
-                './assets/scss/*.scss'
-            ],
-            tasks: ['clean:build', 'sass:build']
+            styles: {
+                files: ['./assets/scss/*.scss'],
+                tasks: [
+                    'clean',
+                    'sasslint',
+                    'sass',
+                    'autoprefixer',
+                    'cssmin'
+                ]
+            },
         }
     });
 
@@ -41,5 +69,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['clean:build', 'sass:build']);
+    grunt.registerTask('default', ['clean', 'sasslint', 'sass', 'autoprefixer', 'cssmin']);
 };

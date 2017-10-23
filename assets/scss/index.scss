@@ -1,8 +1,9 @@
 //
 // The main scss file
 // --------------------------------------------------
-@import "./_variables.scss";
-@import "./_extends.scss";
-@import "./_globals.scss";
-@import "./_layout.scss";
-@import "./_media.scss";
+@import 'variables';
+@import 'extends';
+@import 'globals';
+@import 'layout';
+@import 'socials';
+@import 'media';

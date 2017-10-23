@@ -1,9 +1,10 @@
 //colors
-$color_0: #222;
-$color_1: #ddd;
-$color_2: #e74c3c;
-$color_3: #666;
-$color_4: darken($color_2, 20%);
+$color-0: #222;
+$color-1: #ddd;
+$color-2: #e74c3c;
+$color-3: #666;
+$color-4: darken($color-2, 20%);
+$color-5: #1da1f2;
 
 //fonts
-$font_0: 'Roboto Slab', serif;
+$font-0: 'Roboto Slab', serif;

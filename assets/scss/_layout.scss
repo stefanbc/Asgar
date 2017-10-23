@@ -1,10 +1,10 @@
 //layout
 .container {
-	max-width: 800px;
+    max-width: 800px;
 }
 
 header {
-	margin: 5rem 0;
+    margin: 5rem 0;
 
     .logo-link {
         img {
@@ -13,8 +13,8 @@ header {
     }
 
     nav {
-        border-top: 1px solid $color_1;
-        border-bottom: 1px solid $color_1;
+        border-top: 1px solid $color-1;
+        border-bottom: 1px solid $color-1;
 
         ul {
             display: flex;
@@ -27,7 +27,7 @@ header {
 
                 &.nav-current {
                     a {
-                        color: $color_2;
+                        color: $color-2;
                     }
                 }
 
@@ -50,8 +50,8 @@ main {
             margin-bottom: 4rem;
 
             &.featured-post {
-                border: 1px solid $color_1;
-                background: $color_1;
+                border: 1px solid $color-1;
+                background: $color-1;
                 padding: 3rem;
             }
 
@@ -105,7 +105,7 @@ main {
             }
 
             blockquote {
-                border-left: 4px solid #ddd;
+                border-left: 4px solid $color-1;
                 margin-left: 2rem;
                 padding-left: 2rem;
             }
@@ -115,17 +115,17 @@ main {
             margin-top: 3rem;
 
             .post-tags {
-                color: $color_3;
+                color: $color-3;
             }
 
             .post-share {
                 font-size: 1.2em;
 
                 a {
-                    color: $color_3;
+                    color: $color-3;
 
                     &:hover {
-                        color: $color_2;
+                        color: $color-2;
                     }
                 }
             }
@@ -158,8 +158,8 @@ main {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background-size: cover !important;
-            background-position: center center !important;
+            background-size: cover;
+            background-position: center center;
             margin-right: 17px;
         }
 
@@ -178,7 +178,7 @@ main {
         width: 100%;
         height: 1rem;
         z-index: 99;
-        border-bottom: 1px solid $color_1;
+        border-bottom: 1px solid $color-1;
 
         + .post-content {
             margin-top: 20px;
@@ -187,9 +187,9 @@ main {
 }
 
 footer {
-	margin: 3rem 0 6rem 0;
-	padding-top: 3rem;
-    border-top: 1px solid $color_1;
+    margin: 3rem 0 6rem;
+    padding-top: 3rem;
+    border-top: 1px solid $color-1;
 
     h3,
     form {
@@ -210,6 +210,6 @@ footer {
     }
 
     .copyright {
-        font-size: 0.8em;
+        font-size: .8em;
     }
 }

@@ -14,16 +14,15 @@ Additionally you should replace all the image in the `assets/images` folder. You
 
 Also, don't forget to modify the `partials/meta.hbs` file, lines 12,15,18,19 with your correct links.
 
-This theme is compatible with Ghost 0.10
+This theme is compatible with Ghost 1.x
 
 Developers
 --
 
-Make sure you have Node 0.10^ and npm installed. You'll need to have Grunt and Sass installed. Use these commands:
+Make sure you have the latest stable version of Node and npm installed. You'll need to have Grunt installed. Use these commands:
 
 ```
 npm install -g grunt-cli
-gem install sass
 ```
 
 You can then install all the theme dependencies using:
