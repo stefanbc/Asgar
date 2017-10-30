@@ -24,11 +24,15 @@
   ],
   "author": {
     "name": "Stefan Cosma",
-    "url": "https://stefancosma.xyz"
+    "url": "https://stefancosma.xyz",
+    "email": "hello@stefancosma.xyz"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stefanbc/stefan-log/issues"
   },
-  "homepage": "https://github.com/stefanbc/stefan-log#readme"
+  "homepage": "https://github.com/stefanbc/stefan-log#readme",
+  "config": {
+    "posts_per_page": 5
+  }
 }
