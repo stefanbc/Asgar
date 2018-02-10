@@ -4,9 +4,9 @@
 {{#foreach posts}}
 	{{#if featured}}
 		<article class="featured-post">
-			<h4 class="list-headline">
+			<h5 class="list-headline">
 				<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
-			</h4>
+			</h5>
 			<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
 		</article>
 	{{/if}}
@@ -16,9 +16,9 @@
 {{#foreach posts}}
 	{{#unless featured}}
 		<article>
-			<h4 class="list-headline">
+			<h5 class="list-headline">
 				<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
-			</h4>
+			</h5>
 			<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
 		</article>
 	{{/unless}}

@@ -3,16 +3,15 @@
     <section class="subscribe">
         <div class="row">
             <div class="twelve columns text-center">
-                <h3>Subscribe</h3>
+                <h4>Subscribe</h4>
                 {{subscribe_form placeholder="email address"}}
             </div>
         </div>
-        <p class="text-center">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/" title="RSS" class="text-underline">via RSS</a> with Feedly!</p>
     </section>
     {{/if}}
     <section class="copyright text-center">
-        &copy; {{date format="YYYY"}} 
-        <a href="{{@blog.url}}" class="text-underline">{{@blog.title}}</a> 
+        &copy; {{date format="YYYY"}}
+        <a href="{{@blog.url}}" class="text-underline">{{@blog.title}}</a>
         All rights reserved. Made with <a href="http://ghost.org/" class="text-underline">Ghost</a>.
     </section>
 </footer>

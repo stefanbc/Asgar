@@ -1,19 +1,23 @@
 <section class="social text-center">
-    <a href="https://twitter.com/stefanbc"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-    <a href="https://facebook.com/StefanCosmaIO"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    {{#if @blog.twitter}}
+    <a href="{{twitter_url @blog.twitter}}" target="_blank" rel="noopener"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    {{/if}}
+    {{#if @blog.facebook}}
+    <a href="{{facebook_url @blog.facebook}}" target="_blank" rel="noopener"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    {{/if}}
 
-    <a href="https://github.com/stefanbc"><i class="fa fa-github" aria-hidden="true"></i></a>
-    <a href="https://jsfiddle.net/user/stefanbc/"><i class="fa fa-jsfiddle" aria-hidden="true"></i></a>
+    <a href="https://github.com/stefanbc" target="_blank" rel="noopener"><i class="fa fa-github" aria-hidden="true"></i></a>
+    <a href="https://jsfiddle.net/user/stefanbc/" target="_blank" rel="noopener"><i class="fa fa-jsfiddle" aria-hidden="true"></i></a>
 
-    <a href="http://stackoverflow.com/users/2483223/stefanbc"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-    <a href="https://news.ycombinator.com/user?id=stefcosma"><i class="fa fa-hacker-news" aria-hidden="true"></i></a>
-    <a href="http://dribbble.com/stefanbc"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+    <a href="http://stackoverflow.com/users/2483223/stefanbc" target="_blank" rel="noopener"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+    <a href="https://news.ycombinator.com/user?id=stefcosma" target="_blank" rel="noopener"><i class="fa fa-hacker-news" aria-hidden="true"></i></a>
+    <a href="http://dribbble.com/stefanbc" target="_blank" rel="noopener"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
 
-    <a href="https://medium.com/@stefanbc"><i class="fa fa-medium" aria-hidden="true"></i></a>
-    <a href="https://getpocket.com/@stefanbc"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
-    <a href="https://plus.google.com/+StefanCosmaIO"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-    <a href="https://linkedin.com/in/stefanbc"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-    <a href="https://www.producthunt.com/@stefanbc"><i class="fa fa-product-hunt" aria-hidden="true"></i></a>
+    <a href="https://medium.com/@stefanbc" target="_blank" rel="noopener"><i class="fa fa-medium" aria-hidden="true"></i></a>
+    <a href="https://getpocket.com/@stefanbc" target="_blank" rel="noopener"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/+StefanCosmaIO" target="_blank" rel="noopener"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+    <a href="https://linkedin.com/in/stefanbc" target="_blank" rel="noopener"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+    <a href="https://www.producthunt.com/@stefanbc" target="_blank" rel="noopener"><i class="fa fa-product-hunt" aria-hidden="true"></i></a>
 
-    <a href="mailto:hello@stefancosma.xyz"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    <a href="mailto:hello@stefancosma.xyz" target="_blank" rel="noopener"><i class="fa fa-envelope" aria-hidden="true"></i></a>
 </section>
