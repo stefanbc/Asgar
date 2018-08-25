@@ -14,7 +14,7 @@ Additionally you should replace all the image in the `assets/images` folder. You
 
 Also, don't forget to modify the `partials/meta.hbs` file, lines 12,15,18,19 with your correct links.
 
-This theme is compatible with Ghost 1.x
+This theme is compatible with Ghost 2.x
 
 Developers
 --
@@ -28,16 +28,14 @@ npm install -g grunt-cli
 You can then install all the theme dependencies using:
 
 ```
-npm install
+npm i
 ```
 
-If you want to have the livereload feature enable just add this line
+or
 
 ```
-<script src="//localhost:35729/livereload.js"></script>
+yarn install
 ```
-
-in the `default.hbs` file before the end `</body>`.
 
 Available Grunt tasks:
 

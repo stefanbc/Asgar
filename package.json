@@ -35,5 +35,8 @@
   "homepage": "https://github.com/stefanbc/stefan-log#readme",
   "config": {
     "posts_per_page": 5
+  },
+  "dependencies": {
+    "node-sass": "^4.9.3"
   }
 }

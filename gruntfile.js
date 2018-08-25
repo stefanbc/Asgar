@@ -3,6 +3,8 @@ module.exports = function(grunt) {
     require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
+    const sass = require('node-sass');
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
 
@@ -23,7 +25,10 @@ module.exports = function(grunt) {
 
         sass: {
             default: {
-                options: { sourceMap : 'none' },
+                options: {
+                    sourceMap : 'none',
+                    implementation: sass
+                },
                 files: {
                     './assets/css/style.min.css' : './assets/scss/index.scss'
                 }
