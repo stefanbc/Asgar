@@ -81,7 +81,7 @@ main {
             margin-bottom: 3rem;
         }
 
-        .post-content {
+        .post-full-content {
             a {
                 text-decoration: underline;
             }
@@ -112,6 +112,10 @@ main {
                 border-left: 4px solid $color-1;
                 margin-left: 2rem;
                 padding-left: 2rem;
+            }
+
+            .kg-width-full .kg-image {
+                max-width: 100%;
             }
         }
 
@@ -184,7 +188,7 @@ main {
         z-index: 99;
         border-bottom: 1px solid $color-1;
 
-        + .post-content {
+        + .post-full-content {
             margin-top: 20px;
         }
     }
