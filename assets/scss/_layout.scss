@@ -114,9 +114,13 @@ main {
                 padding-left: 2rem;
             }
 
-            .kg-width-full .kg-image {
-                max-width: 100%;
+            .kg-width-full,
+            .kg-width-wide {
+                .kg-image {
+                    max-width: 100%;
+                }
             }
+
         }
 
         .post-extra {
