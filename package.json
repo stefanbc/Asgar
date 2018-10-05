@@ -5,8 +5,8 @@
   "devDependencies": {
     "grunt": "^1.0.3",
     "grunt-autoprefixer": "^3.0.4",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.0.1",
     "grunt-sass-lint": "^0.2.4",

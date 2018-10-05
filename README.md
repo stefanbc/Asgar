@@ -22,16 +22,10 @@ Developers
 Make sure you have the latest stable version of Node and npm installed. You'll need to have Grunt installed. Use these commands:
 
 ```
-npm install -g grunt-cli
+yarn install -g grunt-cli
 ```
 
 You can then install all the theme dependencies using:
-
-```
-npm i
-```
-
-or
 
 ```
 yarn install
