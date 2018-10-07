@@ -6,6 +6,7 @@
     "grunt": "^1.0.3",
     "grunt-autoprefixer": "^3.0.4",
     "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^3.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.0.1",
@@ -37,6 +38,9 @@
     "posts_per_page": 5
   },
   "dependencies": {
-    "node-sass": "^4.9.3"
+    "font-awesome": "^4.7.0",
+    "node-sass": "^4.9.3",
+    "normalize.css": "^8.0.0",
+    "skeleton.css": "^2.0.4"
   }
 }
