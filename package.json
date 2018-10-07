@@ -1,6 +1,6 @@
 {
   "name": "stefan-log",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Ghost blog theme for personal website",
   "devDependencies": {
     "grunt": "^1.0.3",
