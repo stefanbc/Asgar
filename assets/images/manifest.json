@@ -13,5 +13,7 @@
 		}
 	],
 	"theme_color": "#ffffff",
-	"display": "standalone"
+	"display": "standalone",
+	"short_name": "stefancosma",
+	"background_color": "#ffffff"
 }

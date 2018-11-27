@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-    require('time-grunt')(grunt);
     require('load-grunt-tasks')(grunt);
 
     const sass = require('node-sass');
@@ -11,18 +10,9 @@ module.exports = function(grunt) {
         clean: {
             default: {
                 src: [
-                    './assets/css/**/*',
-                    './assets/fonts/**/*'
+                    './assets/css/**/*'
                 ]
             }
-        },
-
-        copy: {
-            default: {
-                files: [
-                    { expand: true, flatten: true, src: ['./node_modules/font-awesome/fonts/**'], dest: 'assets/fonts/', filter: 'isFile' }
-                ],
-            },
         },
 
         sasslint: {
@@ -59,8 +49,7 @@ module.exports = function(grunt) {
                     './assets/css/style.min.css' : './assets/css/style.min.css',
                     './assets/css/vendor.min.css': [
                         './node_modules/normalize.css/normalize.css',
-                        './node_modules/skeleton.css/skeleton.css',
-                        './node_modules/font-awesome/css/font-awesome.min.css'
+                        './node_modules/skeleton.css/skeleton.css'
                     ]
                 }
             }
@@ -75,7 +64,6 @@ module.exports = function(grunt) {
                 files: ['./assets/scss/*.scss'],
                 tasks: [
                     'clean',
-                    'copy',
                     'sasslint',
                     'sass',
                     'autoprefixer',
@@ -86,12 +74,11 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-sass-lint');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('default', ['clean', 'copy', 'sasslint', 'sass', 'autoprefixer', 'cssmin']);
+    grunt.registerTask('default', ['clean', 'sasslint', 'sass', 'autoprefixer', 'cssmin']);
 };
