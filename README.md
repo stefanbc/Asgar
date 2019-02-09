@@ -1,7 +1,7 @@
 stefan-log
 ==
 
-[![Code Climate](https://codeclimate.com/github/stefanbc/stefan-log/badges/gpa.svg)](https://codeclimate.com/github/stefanbc/stefan-log) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+[![Code Climate](https://codeclimate.com/github/stefanbc/stefan-log/badges/gpa.svg)](https://codeclimate.com/github/stefanbc/stefan-log)
 
 Ghost theme originally based on [Kakotopia](https://en.wiktionary.org/wiki/kakotopia), used on [my personal website](http://stefancosma.xyz).
 
@@ -19,19 +19,14 @@ This theme is compatible with Ghost 2.x
 Developers
 --
 
-Make sure you have the latest stable version of Node and npm installed. You'll need to have Grunt installed. Use these commands:
-
-```
-yarn install -g grunt-cli
-```
-
-You can then install all the theme dependencies using:
+You can install all the theme dependencies using:
 
 ```
 yarn install
 ```
 
-Available Grunt tasks:
+Available tasks:
 
-* `grunt` - will build the whole theme.
-* `grunt watch` - will watch for any file modifications and will build. Will also build on start.
+* `yarn dev` - will build the whole theme unminified.
+* `yarn build` - will build the whole theme for production.
+* `yarn watch` - will watch for any file modifications and will build. Will also build on start.

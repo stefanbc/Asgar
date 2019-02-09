@@ -28,3 +28,4 @@ none
 .DS_STORE
 jsconfig.json
 .vscode
+.cache
