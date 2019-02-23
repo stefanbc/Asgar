@@ -5,7 +5,7 @@
 
 header {
     &.site-header {
-        margin: 10rem 0 6rem;
+        margin: 6rem 0 10rem;
     }
 
     .logo-link {
@@ -16,31 +16,34 @@ header {
 }
 
 nav {
-    border-top: 1px solid $color-1;
-    border-bottom: 1px solid $color-1;
+    &.header-navigation {
+        border-top: 1px solid $color-1;
+        border-bottom: 1px solid $color-1;
+        margin: 0 0 10rem;
 
-    ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
 
-        li {
-            margin-bottom: 0;
+            li {
+                margin-bottom: 0;
 
-            &.nav-current {
-                a {
-                    color: $color-2;
+                &.nav-current {
+                    a {
+                        color: $color-2;
+                    }
                 }
-            }
 
-            a {
-                text-transform: uppercase;
-                font-size: 11px;
-                font-weight: 400;
-                letter-spacing: .2rem;
-                margin: 0 20px;
-                line-height: 6.5rem;
+                a {
+                    text-transform: uppercase;
+                    font-size: 11px;
+                    font-weight: 400;
+                    letter-spacing: .2rem;
+                    margin: 0 20px;
+                    line-height: 6.5rem;
+                }
             }
         }
     }

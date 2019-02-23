@@ -1,5 +1,9 @@
 //media queries
 @media all and (max-width: 480px) {
+    .site-header {
+        margin: 10rem 0 6rem;
+    }
+
     main {
         .post-wrapper {
             .post-extra {
@@ -36,11 +40,5 @@
                 margin-bottom: 10px;
             }
         }
-    }
-}
-
-@media screen and (min-width: 480px) {
-    .site-header {
-        margin: 6rem 0 10rem;
     }
 }

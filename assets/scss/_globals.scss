@@ -11,7 +11,7 @@ body {
 
 a {
     text-decoration: none;
-    color: $color-0;
+    color: lighten($color-0, 15%);
     cursor: pointer;
     @extend %transition;
 

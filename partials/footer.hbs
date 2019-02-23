@@ -9,8 +9,14 @@
         </div>
     </section>
     {{/if}}
-    <section class="copyright text-center">
-        Copyright &copy; {{date format="YYYY"}} <a href="{{@blog.url}}" class="text-underline">{{@blog.title}}</a>. All rights reserved.<br>
-        Published with <a href="http://ghost.org/" class="text-underline">Ghost</a>.
+    <section class="copyright">
+        <div class="row">
+            <div class="one-half column">
+                Copyright &copy; {{date format="YYYY"}} <a href="{{@blog.url}}" class="text-underline">{{@blog.title}}</a>. All rights reserved. Published with <a href="http://ghost.org/" class="text-underline">Ghost</a>.
+            </div>
+            <div class="one-half column text-right">
+                <a href="#">Going up?</a>
+            </div>
+        </div>
     </section>
 </footer>
