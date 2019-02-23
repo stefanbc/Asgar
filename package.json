@@ -28,13 +28,13 @@
     "watch": "parcel watch ./assets/scss/index.scss --no-source-maps -d ./assets/css"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.7.1",
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.0"
+    "sass": "^1.17.2"
   },
   "config": {
     "posts_per_page": 5
