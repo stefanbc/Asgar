@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
     "build": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "watch": "parcel watch ./assets/scss/index.scss --no-source-maps -d ./assets/css"
+    "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",

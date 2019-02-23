@@ -1,4 +1,4 @@
-<header class="text-center">
+<header class="site-header">
     {{#if @blog.logo}}
     <a class="logo-link" title="{{@blog.title}}" href="{{@blog.url}}">
         <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="blog-logo" />
@@ -9,5 +9,6 @@
     </h1>
     {{/if}}
     <h6 class="subtitle">{{@blog.description}}</h6>
-    {{navigation}}
 </header>
+
+{{navigation}}

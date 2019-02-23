@@ -1,31 +1,73 @@
 {{! This is the post loop - each post will be output using this markup }}
 {{! Featured posts}}
 <section class="posts">
-{{#foreach posts}}
-	{{#if featured}}
-		<article class="featured-post">
-			<h5 class="list-headline">
-				<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
-			</h5>
-			<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
-		</article>
-	{{/if}}
-{{/foreach}}
+    {{#foreach posts}}
+    {{#if featured}}
+    <article class="post featured-post">
+        <div class="row">
+            <div class="five columns">
+                <header class="entry-header">
+                    <p class="entry-author">
+                        {{#primary_author}}
+                        By <a href="{{url}}">{{name}}</a>
+                        {{/primary_author}}
+                    </p>
+                    <h2 class="entry-title">
+                        <a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+                    </h2>
+                    <time class="entry-date"
+                        datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                </header>
+            </div>
+            <div class="seven columns">
+                <section class="entry-content">
+                    <p class="entry-tags">{{tags prefix="On: " limit="5"}}</p>
+                    <p>{{excerpt words="120"}}...</p>
+                    <p>
+                        <a class="continue-reading" href="{{url}}">Continue reading &raquo;</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </article>
+    {{/if}}
+    {{/foreach}}
 
-{{! Non-featured posts}}
-{{#foreach posts}}
-	{{#unless featured}}
-		<article>
-			<h5 class="list-headline">
-				<a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
-			</h5>
-			<p>{{excerpt words="50"}}... <a class="continue-reading" href="{{url}}">continue reading &raquo;</a></p>
-		</article>
-	{{/unless}}
-{{/foreach}}
+    {{! Non-featured posts}}
+    {{#foreach posts}}
+    {{#unless featured}}
+    <article class="post">
+        <div class="row">
+            <div class="five columns">
+                <header class="entry-header">
+                    <p class="entry-author">
+                        {{#primary_author}}
+                        By <a href="{{url}}">{{name}}</a>
+                        {{/primary_author}}
+                    </p>
+                    <h2 class="entry-title">
+                        <a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+                    </h2>
+                    <time class="entry-date"
+                        datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                </header>
+            </div>
+            <div class="seven columns">
+                <section class="entry-content">
+                    <p class="entry-tags">{{tags prefix="On: " limit="5"}}</p>
+                    <p>{{excerpt words="120"}}...</p>
+                    <p>
+                        <a class="continue-reading" href="{{url}}">Continue reading &raquo;</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </article>
+    {{/unless}}
+    {{/foreach}}
 </section>
 
 {{! Previous/next page links - displayed on every page }}
 <section class="blog-navigation text-center">
-	{{pagination}}
+    {{pagination}}
 </section>
