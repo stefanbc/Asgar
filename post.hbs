@@ -1,82 +1,84 @@
 {{!< default}}
 {{#post}}
-    <article class="post-wrapper">
-        {{#if feature_image}}
+<article class="post-wrapper">
+    <div class="row">
+        <div class="eight columns">
+            {{#if feature_image}}
             <section class="post-media text-center">
                 <img src="{{img_url feature_image}}" class="cover-image">
             </section>
-        {{/if}}
+            {{/if}}
 
-        <h1 class="post-title text-center">{{{title}}}</h1>
+            <h1 class="post-title">{{{title}}}</h1>
 
-        <section class="post-meta text-center">
-            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-        </section>
+            <section class="post-meta">
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+            </section>
 
-        <section class="post-full-content">
-            <div class="post-content">
-                {{content}}
-            </div>
-        </section>
-
-        <div class="post-spacer"></div>
-
-        <section class="post-extra">
-            <div class="row">
-                <div class="eight columns">
-                    <section class="post-tags">
-                        {{#if tags}}
-                            <i class="fas fa-tags"></i> {{tags}}
-                        {{/if}}
-                    </section>
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{content}}
                 </div>
-                <div class="four columns">
-                    {{> "share"}}
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="author-meta">
-            {{#primary_author}}
-            <div class="row">
-                <div class="two columns">
-                    <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
-                </div>
-                <div class="ten columns">
-                    <h4 class="author-name">
-                        <a href="{{url}}">{{name}}</a> <small><a href="{{twitter_url}}">{{twitter}}</a></small>
-                    </h4>
-                    <p>{{bio}}</p>
-                </div>
-            </div>
-            {{/primary_author}}
-        </section>
-
-        <div class="post-spacer"></div>
-
-        <aside class="read-next">
-            <div class="row">
-                <div class="six columns">
-                    {{#next_post}}
+            <aside class="read-next">
+                <div class="row">
+                    <div class="six columns">
+                        {{#next_post}}
                         <a class="read-next-story" href="{{url}}">
                             <section class="post">
                                 <h4>{{title}}</h4>
                                 <p>{{excerpt words="19"}}&hellip;</p>
                             </section>
                         </a>
-                    {{/next_post}}
-                </div>
-                <div class="six columns">
-                    {{#prev_post}}
+                        {{/next_post}}
+                    </div>
+                    <div class="six columns">
+                        {{#prev_post}}
                         <a class="read-next-story prev" href="{{url}}">
                             <section class="post">
                                 <h4>{{title}}</h4>
                                 <p>{{excerpt words="19"}}&hellip;</p>
                             </section>
                         </a>
-                    {{/prev_post}}
+                        {{/prev_post}}
+                    </div>
                 </div>
-            </div>
-        </aside>
-  </article>
+            </aside>
+        </div>
+        <div class="four columns">
+            <section class="author-meta">
+                {{#primary_author}}
+                <div class="row">
+                    <div class="two columns">
+                        <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
+                    </div>
+                    <div class="ten columns">
+                        <h4 class="author-name">
+                            <a href="{{url}}">{{name}}</a> <small><a href="{{twitter_url}}">{{twitter}}</a></small>
+                        </h4>
+                        <p>{{bio}}</p>
+                    </div>
+                </div>
+                {{/primary_author}}
+            </section>
+
+            <section class="post-extra">
+                <div class="row">
+                    <div class="twelve columns">
+                        <h6>Share this article</h6>
+                        {{> "share"}}
+                    </div>
+                    <div class="twelve columns">
+                        <section class="post-tags">
+                            {{#if tags}}
+                            <i class="fas fa-tags"></i> {{tags}}
+                            {{/if}}
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</article>
 {{/post}}

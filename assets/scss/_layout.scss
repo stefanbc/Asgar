@@ -55,8 +55,8 @@ main {
             margin-bottom: 10rem;
 
             &.featured-post {
-                background: $color-5;
-                padding: 5rem;
+                border-bottom: 1px solid $color-5;
+                padding-bottom: 5rem;
             }
 
             .continue-reading {
