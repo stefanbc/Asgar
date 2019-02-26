@@ -1,14 +1,18 @@
 {
-  "name": "stefan-log",
-  "version": "1.3.0",
-  "description": "Ghost blog theme for personal website",
+  "name": "Asgar",
+  "version": "1.0.0",
+  "description": "A free, open source theme for Ghost",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stefanbc/stefan-log.git"
   },
   "keywords": [
     "ghost",
-    "theme",
+    "ghost-theme",
+    "ghost-blog",
+    "ghost-cms",
+    "ghost-blog-theme",
+    "ghost-themes",
     "minimal",
     "ghost-theme"
   ],
@@ -19,9 +23,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/stefanbc/stefan-log/issues"
+    "url": "https://github.com/stefanbc/Asgar/issues"
   },
-  "homepage": "https://github.com/stefanbc/stefan-log#readme",
+  "homepage": "https://github.com/stefanbc/Asgar#readme",
   "scripts": {
     "dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
     "build": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
