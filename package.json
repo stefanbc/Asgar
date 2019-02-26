@@ -1,10 +1,20 @@
 {
-  "name": "Asgar",
+  "name": "asgar",
   "version": "1.0.0",
   "description": "A free, open source theme for Ghost",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stefanbc/stefan-log.git"
+  },
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+        "Minimal"
+    ]
   },
   "keywords": [
     "ghost",
@@ -14,13 +24,21 @@
     "ghost-blog-theme",
     "ghost-themes",
     "minimal",
-    "ghost-theme"
+    "ghost-theme",
+    "theme"
   ],
   "author": {
     "name": "Stefan Cosma",
     "url": "https://stefancosma.xyz",
     "email": "hello@stefancosma.xyz"
   },
+  "contributors": [
+    {
+        "name": "Stefan Cosma",
+        "email": "hello@stefancosma.xyz",
+        "url": "https://stefancosma.xyz"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/stefanbc/Asgar/issues"
