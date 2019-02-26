@@ -21,6 +21,8 @@
                 </div>
             </section>
 
+            <div class="post-spacer"></div>
+
             <aside class="read-next">
                 <div class="row">
                     <div class="six columns">
@@ -50,14 +52,16 @@
             <section class="author-meta">
                 {{#primary_author}}
                 <div class="row">
-                    <div class="two columns">
+                    <div class="one-third column">
                         <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
                     </div>
-                    <div class="ten columns">
+                    <div class="two-thirds column">
                         <h4 class="author-name">
                             <a href="{{url}}">{{name}}</a> <small><a href="{{twitter_url}}">{{twitter}}</a></small>
                         </h4>
-                        <p>{{bio}}</p>
+                    </div>
+                    <div class="twelve columns">
+                        {{bio}}
                     </div>
                 </div>
                 {{/primary_author}}
