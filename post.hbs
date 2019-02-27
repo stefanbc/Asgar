@@ -25,17 +25,19 @@
 
             <aside class="read-next">
                 <div class="row">
-                    <div class="six columns">
+                    <div class="one-half column">
                         {{#next_post}}
+                        <p><i>Next story</i></p>
                         <a class="read-next-story" href="{{url}}">
                             <section class="post">
-                                <h4>{{title}}</h4>
+                                <h3>{{title}}</h3>
                                 <p>{{excerpt words="19"}}&hellip;</p>
                             </section>
                         </a>
                         {{/next_post}}
                     </div>
-                    <div class="six columns">
+                    <div class="one-half column text-right">
+                        <p><i>Previous story</i></p>
                         {{#prev_post}}
                         <a class="read-next-story prev" href="{{url}}">
                             <section class="post">
@@ -70,7 +72,6 @@
             <section class="post-extra">
                 <div class="row">
                     <div class="twelve columns">
-                        <h6>Share this article</h6>
                         {{> "share"}}
                     </div>
                     <div class="twelve columns">

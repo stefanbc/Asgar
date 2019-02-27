@@ -1,14 +1,19 @@
 <header class="site-header">
-    {{#if @blog.logo}}
-    <a class="logo-link" title="{{@blog.title}}" href="{{@blog.url}}">
-        <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="blog-logo" />
-    </a>
-    {{else}}
-    <h1 class="title">
-        <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
-    </h1>
-    {{/if}}
-    <h6 class="subtitle">{{@blog.description}}</h6>
+    <div class="row">
+        {{#if @blog.logo}}
+        <div class="one-third column">
+            <a class="logo-link" title="{{@blog.title}}" href="{{@blog.url}}">
+                <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="blog-logo" />
+            </a>
+        </div>
+        {{/if}}
+        <div class="two-thirds column">
+            <h1 class="title">
+                <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
+            </h1>
+            <h6 class="subtitle">{{@blog.description}}</h6>
+        </div>
+    </div>
 </header>
 
 {{navigation}}

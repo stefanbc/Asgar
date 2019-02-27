@@ -13,7 +13,7 @@
   "gpm": {
     "type": "theme",
     "categories": [
-        "Minimal"
+      "Minimal"
     ]
   },
   "keywords": [
@@ -34,9 +34,9 @@
   },
   "contributors": [
     {
-        "name": "Stefan Cosma",
-        "email": "hello@stefancosma.xyz",
-        "url": "https://stefancosma.xyz"
+      "name": "Stefan Cosma",
+      "email": "hello@stefancosma.xyz",
+      "url": "https://stefancosma.xyz"
     }
   ],
   "license": "MIT",
@@ -45,8 +45,10 @@
   },
   "homepage": "https://github.com/stefanbc/Asgar#readme",
   "scripts": {
-    "dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "build": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "clean": "rimraf ./assets/css",
+    "mkdir": "mkdir -p ./assets/css",
+    "dev": "yarn clean && yarn mkdir && parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "build": "yarn clean && yarn mkdir && parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
     "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css"
   },
   "dependencies": {
@@ -56,6 +58,7 @@
   },
   "devDependencies": {
     "parcel-bundler": "^1.11.0",
+    "rimraf": "^2.6.3",
     "sass": "^1.17.2"
   },
   "config": {
