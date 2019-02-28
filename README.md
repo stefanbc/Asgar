@@ -1,7 +1,7 @@
 Asgar
 ==
 
-Ghost theme. [Demo](http://stefancosma.xyz).
+Open source Ghost theme.
 
 Customization
 --
