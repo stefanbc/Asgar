@@ -47,9 +47,13 @@
   "scripts": {
     "clean": "rimraf ./assets/css",
     "mkdir": "mkdir -p ./assets/css",
-    "dev": "yarn clean && yarn mkdir && parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "build": "yarn clean && yarn mkdir && parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css"
+    "zip": "zip -r9 asgar-theme.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
+    "validate": "gscan ./asgar-theme.zip -z",
+    "build-dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "build-prod": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css",
+    "dev": "yarn clean && yarn mkdir && yarn build-dev",
+    "prod": "yarn clean && yarn mkdir && yarn build-prod && yarn zip && yarn validate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
@@ -57,6 +61,7 @@
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
+    "gscan": "^2.2.1",
     "parcel-bundler": "^1.11.0",
     "rimraf": "^2.6.3",
     "sass": "^1.17.2"
