@@ -5,7 +5,11 @@
 
 header {
     &.site-header {
-        margin: 6rem 0 10rem;
+        margin: 6rem 0 7rem;
+    }
+
+    .title {
+        margin: 0;
     }
 
     .logo-link {
@@ -50,6 +54,34 @@ nav {
 }
 
 main {
+    article {
+        .entry-author,
+        .entry-tags {
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+
+        .entry-author {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -.6rem;
+                left: 0;
+                width: 2rem;
+                height: .2rem;
+                background-color: $color-0;
+            }
+        }
+
+        .entry-date,
+        .entry-reading-time {
+            font-size: 1.3rem;
+            font-style: italic;
+        }
+    }
+
     .posts {
         article {
             margin-bottom: 10rem;
@@ -66,44 +98,21 @@ main {
             header {
                 margin: 0;
             }
-
-            .entry-author,
-            .entry-tags {
-                font-size: 1.3rem;
-                font-style: italic;
-            }
-
-            .entry-author {
-                position: relative;
-
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -.6rem;
-                    left: 0;
-                    width: 2rem;
-                    height: .2rem;
-                    background-color: $color-0;
-                }
-            }
-
-            .entry-date {
-                font-size: 1.3rem;
-                font-style: italic;
-            }
-        }
-    }
-
-    .blog-navigation {
-        .page-number {
-            margin: 0 2rem;
         }
     }
 
     .post-wrapper {
-        .post-media > img {
-            object-fit: cover;
-            max-width: 100%;
+        header {
+            margin-bottom: 2rem;
+        }
+
+        .post-media {
+            margin-bottom: 2rem;
+
+            > img {
+                object-fit: cover;
+                max-width: 100%;
+            }
         }
 
         .post-meta {
@@ -173,15 +182,18 @@ main {
             }
         }
 
-        .author-meta {
+        aside.read-next {
             margin-top: 3rem;
         }
 
-        aside.read-next {
-            margin-top: 3rem;
+        .sidebar {
+            .widget {
+                margin-bottom: 4rem;
 
-            p {
-                margin: 0;
+                li {
+                    padding-bottom: 1rem;
+                    border-bottom: 1px dotted $color-3;
+                }
             }
         }
     }
@@ -214,6 +226,12 @@ main {
 
         + .post-full-content {
             margin-top: 20px;
+        }
+    }
+
+    .blog-navigation {
+        .page-number {
+            margin: 0 2rem;
         }
     }
 }
@@ -257,6 +275,7 @@ footer {
     margin: 3rem 0 6rem;
     padding-top: 3rem;
     border-top: 1px solid $color-1;
+    font-style: italic;
 
     h4,
     form {

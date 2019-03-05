@@ -1,89 +1,70 @@
 {{!< default}}
 {{#post}}
-<article class="post-wrapper">
-    <div class="row">
-        <div class="eight columns">
-            {{#if feature_image}}
-            <section class="post-media text-center">
-                <img src="{{img_url feature_image}}" class="cover-image">
-            </section>
-            {{/if}}
 
-            <h1 class="post-title">{{{title}}}</h1>
+{{#if featured}}
+<article class="post-wrapper featured-post">
+    {{else}}
+    <article class="post-wrapper">
+        {{/if}}
 
-            <section class="post-meta">
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-            </section>
+        <div class="row">
+            <div class="eight columns">
+                {{#if feature_image}}
+                <section class="post-media text-center">
+                    <img src="{{img_url feature_image}}" class="cover-image">
+                </section>
+                {{/if}}
 
-            <section class="post-full-content">
-                <div class="post-content">
-                    {{content}}
-                </div>
-            </section>
+                <header class="entry-header">
+                    <p class="entry-author">
+                        {{#primary_author}}
+                        By <a href="{{url}}">{{name}}</a>
+                        {{/primary_author}}
+                    </p>
+                    <h1 class="entry-title">{{{title}}}</h1>
+                    <time class="entry-date"
+                        datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> - <time
+                        class="entry-reading-time">{{reading_time}}</time>
+                </header>
 
-            <div class="post-spacer"></div>
-
-            <aside class="read-next">
-                <div class="row">
-                    <div class="one-half column">
-                        {{#next_post}}
-                        <p><i>Next story</i></p>
-                        <a class="read-next-story" href="{{url}}">
-                            <section class="post">
-                                <h3>{{title}}</h3>
-                                <p>{{excerpt words="19"}}&hellip;</p>
-                            </section>
-                        </a>
-                        {{/next_post}}
+                <section class="post-full-content">
+                    <div class="post-content">
+                        {{content}}
                     </div>
-                    <div class="one-half column text-right">
-                        <p><i>Previous story</i></p>
-                        {{#prev_post}}
-                        <a class="read-next-story prev" href="{{url}}">
-                            <section class="post">
-                                <h4>{{title}}</h4>
-                                <p>{{excerpt words="19"}}&hellip;</p>
-                            </section>
-                        </a>
-                        {{/prev_post}}
+                </section>
+
+                <div class="post-spacer"></div>
+
+                <aside class="read-next">
+                    <div class="row">
+                        <div class="one-half column">
+                            {{#next_post}}
+                            <p><i>Next story</i></p>
+                            <a class="read-next-story" href="{{url}}">
+                                <section class="post">
+                                    <h3>{{title}}</h3>
+                                </section>
+                            </a>
+                            {{/next_post}}
+                        </div>
+                        <div class="one-half column text-right">
+                            <p><i>Previous story</i></p>
+                            {{#prev_post}}
+                            <a class="read-next-story prev" href="{{url}}">
+                                <section class="post">
+                                    <h4>{{title}}</h4>
+                                </section>
+                            </a>
+                            {{/prev_post}}
+                        </div>
                     </div>
-                </div>
-            </aside>
+                </aside>
+            </div>
+            <div class="four columns">
+                <aside class="sidebar">
+                    {{> "sidebar"}}
+                </aside>
+            </div>
         </div>
-        <div class="four columns">
-            <section class="author-meta">
-                {{#primary_author}}
-                <div class="row">
-                    <div class="one-third column">
-                        <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
-                    </div>
-                    <div class="two-thirds column">
-                        <h4 class="author-name">
-                            <a href="{{url}}">{{name}}</a> <small><a href="{{twitter_url}}">{{twitter}}</a></small>
-                        </h4>
-                    </div>
-                    <div class="twelve columns">
-                        {{bio}}
-                    </div>
-                </div>
-                {{/primary_author}}
-            </section>
-
-            <section class="post-extra">
-                <div class="row">
-                    <div class="twelve columns">
-                        {{> "share"}}
-                    </div>
-                    <div class="twelve columns">
-                        <section class="post-tags">
-                            {{#if tags}}
-                            <i class="fas fa-tags"></i> {{tags}}
-                            {{/if}}
-                        </section>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</article>
-{{/post}}
+    </article>
+    {{/post}}

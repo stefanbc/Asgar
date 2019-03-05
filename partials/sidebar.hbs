@@ -1,0 +1,38 @@
+<section class="widget share">
+    <h6 class="widget-title">Share</h6>
+    <div class="widget-content">
+        {{> "share"}}
+    </div>
+</section>
+
+<section class="widget recent-posts">
+    <h6 class="widget-title">Recent posts</h6>
+    <div class="widget-content">
+        {{#get "posts" filter="id:-{{id}}" limit=@config.posts_per_page}}
+            <ul>
+                {{#foreach posts}}
+                    <li>
+                        <a href="{{url}}" title="{{title}}">{{title}}</a>
+                    </li>
+                {{/foreach}}
+            </ul>
+        {{/get}}
+    </div>
+</section>
+
+{{#if tags}}
+<section class="widget tags">
+    <h6 class="widget-title">Tags</h6>
+    <div class="widget-content">
+        <section class="post-tags">
+            <ul>
+                {{#foreach tags}}
+                    <li>
+                        <a href="{{url}}" title="{{name}}">{{name}}</a>
+                    </li>
+                {{/foreach}}
+            </ul>
+        </section>
+    </div>
+</section>
+{{/if}}
