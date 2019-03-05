@@ -200,20 +200,20 @@ main {
 
     .author-meta {
         .author-image {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center center;
-            margin-right: 17px;
+            width: 14rem;
+            height: 14rem;
+            border-radius: 3px;
         }
 
         .author-name {
-            margin-bottom: 0;
-
             small {
                 font-size: 60%;
             }
+        }
+
+        .author-info-icon {
+            width: 2rem;
+            display: inline-block;
         }
     }
 

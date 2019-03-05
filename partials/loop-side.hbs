@@ -1,0 +1,69 @@
+{{! This is the post loop - each post will be output using this markup }}
+{{! Featured posts}}
+<section class="posts">
+    {{#foreach posts}}
+    {{#if featured}}
+    <article class="post featured-post">
+        <div class="row">
+            <div class="twelve columns">
+                <header class="entry-header">
+                    <p class="entry-author">
+                        {{#primary_author}}
+                        By <a href="{{url}}">{{name}}</a>
+                        {{/primary_author}}
+                    </p>
+                    <h2 class="entry-title">
+                        <a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+                    </h2>
+                    <time class="entry-date"
+                        datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                </header>
+                <section class="entry-content">
+                    <p class="entry-tags">{{tags prefix="On: " limit="5"}}</p>
+                    <p>{{excerpt words="100"}}...</p>
+                    <p>
+                        <a class="continue-reading" href="{{url}}">Continue reading &raquo;</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </article>
+    {{/if}}
+    {{/foreach}}
+
+    {{! Non-featured posts}}
+    {{#foreach posts}}
+    {{#unless featured}}
+    <article class="post">
+        <div class="row">
+            <div class="twelve columns">
+                <header class="entry-header">
+                    <p class="entry-author">
+                        {{#primary_author}}
+                        By <a href="{{url}}">{{name}}</a>
+                        {{/primary_author}}
+                    </p>
+                    <h2 class="entry-title">
+                        <a href="{{url}}" title="{{{title}}}">{{{title}}}</a>
+                    </h2>
+                    <time class="entry-date"
+                        datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+                </header>
+                <section class="entry-content">
+                    <p class="entry-tags">{{tags prefix="On: " limit="5"}}</p>
+                    <p>{{excerpt words="100"}}...</p>
+                    <p>
+                        <a class="continue-reading" href="{{url}}">Continue reading &raquo;</a>
+                    </p>
+                </section>
+            </div>
+        </div>
+    </article>
+    {{/unless}}
+    {{/foreach}}
+</section>
+
+{{! Previous/next page links - displayed on every page }}
+<section class="blog-navigation">
+    {{pagination}}
+</section>

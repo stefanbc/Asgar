@@ -1,18 +1,48 @@
 {{!< default}}
-<section class="author-meta">
-    {{#author}}
-    <div class="row">
-        <div class="two columns">
-            <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
-        </div>
-        <div class="ten columns">
-            <h4 class="author-name">
-                <a href="{{url}}">{{name}}</a>
-            </h4>
-            <p>{{bio}}</p>
-        </div>
+
+<div class="row">
+    <div class="four columns">
+        <section class="author-meta">
+            {{#author}}
+            <div class="row">
+                <div class="twelve columns">
+                    <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
+                    <h1 class="author-name">
+                        <a href="{{url}}">{{name}}</a>
+                    </h1>
+                    <p>{{bio}}</p>
+                    <dl>
+                        {{#if website}}
+                        <dt><span class="author-info-icon"><i class="fas fa-link"></i></span> <a href="{{website}}"
+                                title="{{name}} Website" target="_blank">{{website}}</a></dt>
+                        {{/if}}
+                        {{#if twitter}}
+                        <dt><span class="author-info-icon"><i class="fab fa-twitter"></i></span> <a
+                                href="https://twitter.com/{{twitter}}" title="{{name}} Twitter"
+                                target="_blank">{{twitter}}</a></dt>
+                        {{/if}}
+                        {{#if facebook}}
+                        <dt><span class="author-info-icon"><i class="fab fa-facebook"></i></span> <a
+                                href="https://facebook.com/{{facebook}}" title="{{name}} Facebook"
+                                target="_blank">{{facebook}}</a></dt>
+                        {{/if}}
+                        {{#if location}}
+                        <dt><span class="author-info-icon"><i class="fas fa-map-marker-alt"></i></span> {{location}}
+                        </dt>
+                        {{/if}}
+                        <dt><span class="author-info-icon"><i class="fas fa-pencil-alt"></i></span>
+                            {{#get "posts" filter="authors:{{slug}}" limit="all"}}
+                            {{posts.length}}
+                            {{/get}}
+                            posts
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            {{/author}}
+        </section>
     </div>
-    {{/author}}
-</section>
-{{! The tag below includes the post loop - partials/loop.hbs }}
-{{> "loop"}}
+    <div class="offset-by-two six columns">
+        {{> "loop-side"}}
+    </div>
+</div>
