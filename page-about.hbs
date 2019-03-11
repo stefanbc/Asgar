@@ -1,34 +1,51 @@
 {{!< default}}
+
 {{#post}}
-  <article class="post-wrapper">
-    <section class="author-meta">
-        {{#primary_author}}
-        <div class="row">
-            <div class="two columns">
-                <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
-            </div>
-            <div class="ten columns">
-                <h4 class="author-name">
-                    <a href="{{url}}">{{name}}</a>
-                </h4>
-                <p>{{bio}}</p>
-            </div>
+<article class="post-wrapper">
+    <div class="row">
+        <div class="four columns">
+            <section class="author-meta">
+                {{#primary_author}}
+                <div class="row">
+                    <div class="twelve columns">
+                        <img class="author-image" src="{{img_url profile_image}}" alt="{{name}}">
+                        <h1 class="author-name">
+                            <a href="{{url}}">{{name}}</a>
+                        </h1>
+                        <p>{{bio}}</p>
+                        <dl>
+                            {{#if website}}
+                            <dt><span class="author-info-icon"><i class="fas fa-link" aria-hidden="true"></i></span> <a
+                                    href="{{website}}" title="{{name}} Website" target="_blank"
+                                    rel="noopener">{{website}}</a></dt>
+                            {{/if}}
+                            {{#if location}}
+                            <dt><span class="author-info-icon"><i class="fas fa-map-marker-alt"
+                                        aria-hidden="true"></i></span> {{location}}
+                            </dt>
+                            {{/if}}
+                            <dt><span class="author-info-icon"><i class="fas fa-pencil-alt"
+                                        aria-hidden="true"></i></span>
+                                {{#get "posts" filter="authors:{{slug}}" limit="all"}}
+                                {{posts.length}}
+                                {{/get}}
+                                posts
+                            </dt>
+                        </dl>
+                        <section class="author-social">
+                            {{> "social"}}
+                        </section>
+                    </div>
+                </div>
+                {{/primary_author}}
+            </section>
         </div>
-        {{/primary_author}}
-    </section>
-
-    <div class="post-spacer"></div>
-
-    <section class="post-full-content">
-        <div class="post-content">
-            {{content}}
+        <div class="offset-by-two six columns">
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </section>
         </div>
-    </section>
-
-    <div class="post-spacer"></div>
-
-    <section class="author-social">
-        {{> "social"}}
-    </section>
-  </article>
-{{/post}}
+    </div>
+    {{/post}}

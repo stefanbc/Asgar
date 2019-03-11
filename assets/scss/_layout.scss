@@ -174,11 +174,13 @@ main {
         }
 
         .author-social {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             margin-top: 3rem;
 
-            .social a {
+            a {
                 font-size: 1.7em;
-                margin: 0 .8rem;
             }
         }
 
