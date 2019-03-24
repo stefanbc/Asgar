@@ -13,9 +13,10 @@
     {{! Twitter}}
     <meta name="twitter:image:src" content="{{@blog.url}}{{asset '/images/logo.png'}}"/>
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans:300,400,700">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor.min.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/style.min.css"}}" />
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Playfair+Display:400,700">
+    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/index.css"}}" />
 
     {{!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --}}
     <!--[if lt IE 9]>
@@ -35,7 +36,7 @@
                 <section class="error-content error-404 js-error-container text-center">
                   <section class="error-details">
                     <section class="error-message">
-                      <h1 class="error-code">{{code}}</h1>
+                      <h1 class="error-code"><i class="fas fa-bomb"></i> {{code}} <i class="fas fa-bomb"></i></h1>
                       <h2 class="error-description">{{message}}</h2>
                       <a class="error-link" href="{{@blog.url}}">Go back →</a>
                     </section>
