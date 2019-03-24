@@ -1,4 +1,8 @@
 //globals
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: $font-1;
     font-weight: 400;
@@ -104,6 +108,15 @@ strong {
 
 dt {
     margin-bottom: 1.4rem;
+}
+
+blockquote {
+    position: relative;
+    margin: 0 0 2.5rem;
+    padding: 0 0 1rem;
+    color: $color-3;
+    font-family: $font-0;
+    font-style: italic;
 }
 
 .text-left {

@@ -131,7 +131,7 @@ main {
             }
 
             ul {
-                list-style-type: initial;
+                list-style-type: square;
             }
 
             ul,
@@ -144,12 +144,6 @@ main {
 
             code {
                 overflow: auto;
-            }
-
-            blockquote {
-                border-left: 4px solid $color-1;
-                margin-left: 2rem;
-                padding-left: 2rem;
             }
         }
 

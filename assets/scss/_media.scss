@@ -43,6 +43,37 @@
     }
 }
 
+@media screen and (min-width: 480px) {
+    blockquote {
+        padding-left: 6rem;
+
+        &::before {
+            content: '“';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: $color-0;
+            font-family: $font-0;
+            font-size: 6rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: .8;
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    blockquote {
+        padding-right: 2rem;
+        padding-left: 8.6rem;
+
+        &::before {
+            font-size: 8rem;
+        }
+    }
+}
+
 @media (min-width: 40rem) {
     h1 {
         font-size: 5rem;
@@ -67,4 +98,4 @@
     h6 {
         font-size: 2rem;
     }
-  }
+}
