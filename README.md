@@ -8,6 +8,8 @@ Customization
 
 Make sure you replace the URLs in the `partials/social.hbs` file with your own social media URLs.
 
+This theme has multiple custom pages: /about, /projects and /speaking. You should modify the tables in each of the pages. Checkout the Ghost [docs](https://docs.ghost.org/api/handlebars-themes/context/page/#templates) for more info about custom pages.
+
 Additionally you should replace all the image in the `assets/images` folder. You can use [this useful tool](http://realfavicongenerator.net/).
 
 This theme is compatible with Ghost 2.x
