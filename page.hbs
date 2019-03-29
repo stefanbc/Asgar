@@ -1,12 +1,30 @@
 {{!< default}}
-{{#post}}
-  <article class="post-wrapper">
-    <h2 class="post-title">{{{title}}}</h2>
 
-    <section class="post-full-content">
-        <div class="post-content">
-            {{content}}
+{{#post}}
+<article class="post-wrapper">
+    <div class="row">
+        <div class="eight columns">
+            {{#if feature_image}}
+            <section class="post-media text-center">
+                <img src="{{img_url feature_image}}" class="cover-image">
+            </section>
+            {{/if}}
+
+            <header class="entry-header">
+                <h1 class="entry-title">{{{title}}}</h1>
+            </header>
+
+            <section class="post-full-content">
+                <div class="post-content">
+                    {{content}}
+                </div>
+            </section>
         </div>
-    </section>
-  </article>
+        <div class="four columns">
+            <aside class="sidebar">
+                {{> "sidebar"}}
+            </aside>
+        </div>
+    </div>
+</article>
 {{/post}}
