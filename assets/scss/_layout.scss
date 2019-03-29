@@ -192,6 +192,30 @@ main {
                 }
             }
         }
+
+        .table-wrapper {
+            table {
+                tr {
+                    td:first-child {
+                        width: 25%;
+                    }
+                }
+            }
+
+            &.events-list {
+                table {
+                    tr {
+                        td:first-child {
+                            width: 70%;
+                        }
+
+                        td:nth-child(2) {
+                            width: 10%;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .author-meta {
@@ -275,6 +299,7 @@ footer {
 
     h4,
     form {
+        font-style: normal;
         display: inline-block;
         vertical-align: middle;
     }
