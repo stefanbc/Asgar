@@ -10,6 +10,7 @@ header {
 
     .title {
         margin: 0;
+        line-height: .8;
     }
 
     .logo-link {
@@ -268,12 +269,12 @@ main {
 
     .kg-gallery-container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
 
         .kg-gallery-row {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: center;
 
             .kg-gallery-image {
@@ -285,6 +286,12 @@ main {
                     margin: 0;
                     width: 100%;
                     height: 100%;
+                    transition: transform .15s ease;
+
+                    &:hover {
+                        transform: scale(2);
+                        z-index: 5;
+                    }
                 }
             }
         }
@@ -296,13 +303,6 @@ footer {
     padding-top: 3rem;
     border-top: 1px solid $color-1;
     font-style: italic;
-
-    h4,
-    form {
-        font-style: normal;
-        display: inline-block;
-        vertical-align: middle;
-    }
 
     form {
         vertical-align: middle;

@@ -3,7 +3,7 @@
 {{#post}}
 <article class="post-wrapper">
     <div class="row">
-        <div class="eight columns">
+        <div class="twelve columns">
             {{#if feature_image}}
             <section class="post-media text-center">
                 <img src="{{img_url feature_image}}" class="cover-image">
@@ -13,7 +13,10 @@
             <header class="entry-header">
                 <h1 class="entry-title">{{{title}}}</h1>
             </header>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="eight columns">
             <section class="post-full-content">
                 <div class="post-content">
                     {{content}}

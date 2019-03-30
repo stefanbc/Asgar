@@ -6,19 +6,29 @@
                 <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="blog-logo" />
             </a>
         </div>
-        <div class="eleven columns">
+        <div class="nine columns">
             <h1 class="title">
                 <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
             </h1>
             <h6 class="subtitle">{{@blog.description}}</h6>
         </div>
+        {{#if @labs.subscribers}}
+        <div class="two columns">
+            <a class="button" href="/subscribe">Subscribe</a>
+        </div>
+        {{/if}}
         {{else}}
-        <div class="twelve columns">
+        <div class="ten columns">
             <h1 class="title">
                 <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
             </h1>
             <h6 class="subtitle">{{@blog.description}}</h6>
         </div>
+        {{#if @labs.subscribers}}
+        <div class="two columns">
+            <a class="button" href="/subscribe">Subscribe</a>
+        </div>
+        {{/if}}
         {{/if}}
     </div>
 </header>
