@@ -10,7 +10,7 @@ header {
 
     .title {
         margin: 0;
-        line-height: .8;
+        line-height: 1;
     }
 
     .logo-link {
@@ -289,7 +289,7 @@ main {
                     transition: transform .15s ease;
 
                     &:hover {
-                        transform: scale(2);
+                        transform: scale(1.4);
                         z-index: 5;
                     }
                 }
