@@ -1,16 +1,16 @@
 <header class="site-header">
     <div class="row">
-        {{#if @blog.logo}}
+        {{#if @site.logo}}
         <div class="one column">
-            <a class="logo-link" title="{{@blog.title}}" href="{{@blog.url}}">
-                <img src="{{@blog.logo}}" alt="{{@blog.title}}" class="blog-logo" />
+            <a class="logo-link" title="{{@site.title}}" href="{{@site.url}}">
+                <img src="{{@site.logo}}" alt="{{@site.title}}" class="blog-logo" />
             </a>
         </div>
         <div class="nine columns">
             <h1 class="title">
-                <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
+                <a href="{{@site.url}}" title="{{@site.title}}">{{@site.title}}</a>
             </h1>
-            <h6 class="subtitle">{{@blog.description}}</h6>
+            <h6 class="subtitle">{{@site.description}}</h6>
         </div>
         {{#if @labs.subscribers}}
         <div class="two columns">
@@ -20,9 +20,9 @@
         {{else}}
         <div class="ten columns">
             <h1 class="title">
-                <a href="{{@blog.url}}" title="{{@blog.title}}">{{@blog.title}}</a>
+                <a href="{{@site.url}}" title="{{@site.title}}">{{@site.title}}</a>
             </h1>
-            <h6 class="subtitle">{{@blog.description}}</h6>
+            <h6 class="subtitle">{{@site.description}}</h6>
         </div>
         {{#if @labs.subscribers}}
         <div class="two columns">

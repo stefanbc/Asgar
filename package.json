@@ -60,10 +60,10 @@
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^2.3.0",
+    "gscan": "^2.5.0",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
-    "sass": "^1.17.3"
+    "sass": "^1.18.0"
   },
   "config": {
     "posts_per_page": 5
