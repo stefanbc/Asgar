@@ -45,25 +45,28 @@
   },
   "homepage": "https://github.com/stefanbc/Asgar#readme",
   "scripts": {
-    "clean": "rimraf ./assets/css",
-    "mkdir": "mkdir -p ./assets/css",
+    "clean": "rimraf ./assets/css && rimraf ./assets/js && rimraf ./asgar-theme.zip",
+    "mkdir": "mkdir -p ./assets/css && mkdir -p ./assets/js",
     "zip": "zip -r9 asgar-theme.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
     "validate": "gscan ./asgar-theme.zip -z",
-    "build-dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "build-prod": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "build-css-dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "build-css-prod": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
+    "build-js-dev": "parcel ./assets/source/index.js --no-source-maps -d ./assets/js",
+    "build-js-prod": "parcel build ./assets/source/index.js --no-source-maps -d ./assets/js",
     "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css",
-    "dev": "yarn clean && yarn mkdir && yarn build-dev",
-    "prod": "yarn clean && yarn mkdir && yarn build-prod && yarn zip && yarn validate"
+    "dev": "yarn clean && yarn mkdir && yarn build-css-dev && yarn build-js-dev",
+    "prod": "yarn clean && yarn mkdir && yarn build-css-prod && yarn build-js-prod",
+    "deploy": "yarn prod && yarn zip && yarn validate"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^2.5.0",
+    "gscan": "^2.5.1",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
-    "sass": "^1.18.0"
+    "sass": "^1.19.0"
   },
   "config": {
     "posts_per_page": 5
