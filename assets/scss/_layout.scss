@@ -255,6 +255,16 @@ main {
             margin: 0 2rem;
         }
     }
+
+    form.subscribe {
+        * {
+            margin: 0;
+        }
+
+        .form-group {
+            display: inline-block;
+        }
+    }
 }
 
 .kg-width-full,
@@ -303,19 +313,6 @@ footer {
     padding-top: 3rem;
     border-top: 1px solid $color-1;
     font-style: italic;
-
-    form {
-        vertical-align: middle;
-        margin-left: 15px;
-
-        * {
-            margin: 0;
-        }
-
-        .form-group {
-            display: inline-block;
-        }
-    }
 
     .copyright {
         font-size: .8em;
