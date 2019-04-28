@@ -285,10 +285,8 @@ main {
         .kg-gallery-row {
             display: flex;
             flex-direction: column;
-            justify-content: center;
 
             .kg-gallery-image {
-                flex: 1 1 0%;
                 margin: 5px;
 
                 img {
