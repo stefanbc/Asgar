@@ -45,10 +45,10 @@
   },
   "homepage": "https://github.com/stefanbc/Asgar#readme",
   "scripts": {
-    "clean": "rimraf ./assets/css && rimraf ./assets/js && rimraf ./asgar-theme.zip",
+    "clean": "rimraf ./assets/css && rimraf ./assets/js && rimraf ./asgar.zip",
     "mkdir": "mkdir -p ./assets/css && mkdir -p ./assets/js",
-    "zip": "zip -r9 asgar-theme.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
-    "validate": "gscan ./asgar-theme.zip -z",
+    "zip": "zip -r9 asgar.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
+    "validate": "gscan ./asgar.zip -z",
     "build-css-dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
     "build-css-prod": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
     "build-js-dev": "parcel ./assets/source/index.js --no-source-maps -d ./assets/js",
