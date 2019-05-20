@@ -1,10 +1,10 @@
 {
   "name": "asgar",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A free, open source theme for Ghost",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stefanbc/stefan-log.git"
+    "url": "git+https://github.com/stefanbc/Asgar.git"
   },
   "engines": {
     "ghost": ">=2.0.0",
@@ -63,10 +63,10 @@
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^2.5.1",
+    "gscan": "^2.6.0",
     "parcel-bundler": "^1.12.3",
     "rimraf": "^2.6.3",
-    "sass": "^1.19.0"
+    "sass": "^1.20.1"
   },
   "config": {
     "posts_per_page": 5
