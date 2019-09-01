@@ -5,7 +5,7 @@ export default class Asgar {
             let xhr = new XMLHttpRequest(),
                 loading = document.getElementsByClassName("fa-sync")[0],
                 checkURL = () => {
-                    return window.location.href.includes('/projects') || window.location.href.includes('/speaking');
+                    return window.location.href.includes('/projects') || window.location.href.includes('/speaking') || window.location.href.includes('/about');
                 }
 
             xhr.onload = () => {
@@ -14,6 +14,7 @@ export default class Asgar {
                     loading.style.display = 'none';
 
                     let data = JSON.parse(xhr.response),
+                        author_social = document.getElementsByClassName("author-social")[0],
                         projects = document.getElementsByClassName("projects-list")[0],
                         events = document.getElementsByClassName("events-list")[0],
                         addItem = (html, parent) => {
@@ -21,6 +22,16 @@ export default class Asgar {
                             item.innerHTML = html;
                             parent.getElementsByTagName('tbody')[0].appendChild(item);
                         }
+
+                    if(author_social) {
+                        data.social_urls.forEach(object => {
+                            let social_url = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon == 'envelop' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`,
+                                item = document.createElement("span");
+
+                            item.innerHTML = social_url;
+                            author_social.appendChild(item);
+                        });
+                    }
 
                     if(projects) {
                         data.projects.forEach(object => {
