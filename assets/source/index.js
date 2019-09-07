@@ -11,7 +11,9 @@ export default class Asgar {
             xhr.onload = () => {
 
                 if (xhr.status >= 200 && xhr.status < 300) {
-                    loading.style.display = 'none';
+                    if (loading) {
+                        loading.style.display = 'none';
+                    }
 
                     let data = JSON.parse(xhr.response),
                         author_social = document.getElementsByClassName("author-social")[0],
@@ -25,7 +27,7 @@ export default class Asgar {
 
                     if(author_social) {
                         data.social_urls.forEach(object => {
-                            let social_url = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon == 'envelop' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`,
+                            let social_url = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon == 'envelope' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`,
                                 item = document.createElement("span");
 
                             item.innerHTML = social_url;
