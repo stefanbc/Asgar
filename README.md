@@ -8,8 +8,7 @@ Instalation
 
 1. Download the theme from GitHub.
 2. Upload the theme as described in the [Ghost Documentation](https://docs.ghost.org/concepts/config/).
-3. Make sure you replace the URLs in the `partials/social.hbs` file with your own social media URLs.
-4. This theme has multiple custom pages: `about`, `projects` and `speaking`. Checkout the Ghost [docs](https://docs.ghost.org/api/handlebars-themes/context/page/#templates) for more info about custom pages. To customize the data, on the right side, in the `projects` and `speaking` pages you'll first need to add this to your `routes.yaml` file, bellow the `routes` key:
+3. This theme has multiple custom pages: `about`, `projects` and `speaking`. Checkout the Ghost [docs](https://docs.ghost.org/api/handlebars-themes/context/page/#templates) for more info about custom pages. To customize the data, on the right side, in the `projects` and `speaking` pages you'll first need to add this to your `routes.yaml` file, bellow the `routes` key:
 ```
   /custom/api/:
     permalink: /custom/api/
@@ -19,7 +18,7 @@ Instalation
 More info about the `routes.yaml` file [here](https://docs.ghost.org/api/handlebars-themes/routing/).
 After that you can customize the `api.hbs` file with your data, just make sure the structure remains the same.
 
-5. Additionally you should replace all the image in the `assets/images` folder. You can use [this useful tool](http://realfavicongenerator.net/).
+4. Additionally you should replace all the image in the `assets/images` folder. You can use [this useful tool](http://realfavicongenerator.net/).
 
 After you've completed the steps above, you can zip the theme and upload it.
 
