@@ -1,0 +1,100 @@
+.kg-width-full,
+.kg-width-wide {
+    .kg-image {
+        max-width: 100%;
+    }
+}
+
+.kg-card {
+    margin: 0;
+    text-align: center;
+
+    &.kg-gallery-card {
+        .kg-gallery-container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            .kg-gallery-row {
+                display: flex;
+                flex-direction: column;
+
+                .kg-gallery-image {
+                    margin: 5px;
+
+                    img {
+                        display: block;
+                        margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: transform .15s ease;
+
+                        &:hover {
+                            transform: scale(1.4);
+                            z-index: 5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.kg-bookmark-card {
+    .kg-bookmark-container {
+        display: flex;
+        flex-wrap: wrap;
+        text-decoration: none;
+        text-align: initial;
+        border: 2px solid $color-3;
+
+        .kg-bookmark-content {
+            flex-basis: 0;
+            flex-grow: 999;
+            min-width: 50%;
+            padding: 20px;
+
+            .kg-bookmark-title {
+                font-weight: 600;
+            }
+
+            .kg-bookmark-description,
+            .kg-bookmark-metadata {
+                margin-top: 12px;
+            }
+
+            .kg-bookmark-metadata {
+                .kg-bookmark-icon {
+                    width: 22px;
+                    height: 22px;
+                    margin-right: 8px;
+                    vertical-align: bottom;
+                }
+
+                .kg-bookmark-author {
+                    font-style: italic;
+
+                    &::after {
+                        content: '•';
+                        margin: 0 6px;
+                    }
+                }
+
+                .kg-bookmark-publisher {
+                    font-style: italic;
+                }
+            }
+        }
+
+        .kg-bookmark-thumbnail {
+            flex-basis: 15rem;
+            flex-grow: 1;
+
+            img {
+                vertical-align: bottom;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+    }
+}

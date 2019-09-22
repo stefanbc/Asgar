@@ -2612,10 +2612,10 @@ grapheme-breaker@^0.3.2:
     brfs "^1.2.0"
     unicode-trie "^0.3.1"
 
-gscan@^2.7.0:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.7.0.tgz#c4ae05a4ca4ac9f178b060622b3531b39024bee4"
-  integrity sha512-FiweUbRoaVp9v8tVYsMKKoJWh3ycBIA/kev4YOgO4SwPEbYVk90MXTuvdp9pzUXwaJ+3BR76foBOkCNRnQgUgw==
+gscan@^2.9.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-2.9.0.tgz#de169bd971043872ac830a65cd632149ecddbb8c"
+  integrity sha512-igE0rPtbc0u3IQ3pruFXTSarc+JIHEXbRv/iyqeFlujgR0iKJ0tKPKRQGceYqzy5x+sT7MTwtxpa+LLOhN2SNw==
   dependencies:
     "@tryghost/extract-zip" "1.6.6"
     "@tryghost/pretty-cli" "1.2.1"
@@ -5030,10 +5030,10 @@ safer-eval@^1.3.0:
   dependencies:
     clones "^1.2.0"
 
-sass@^1.22.10:
-  version "1.22.10"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.22.10.tgz#b9f01440352ba0be5d99fa64a2040b035cc6e5ff"
-  integrity sha512-DUpS1tVMGCH6gr/N9cXCoemrjoNdOLhAHfQ37fJw2A5ZM4gSI9ej/8Xi95Xwus03RqZ2zdSnKZGULL7oS+jfMA==
+sass@^1.22.12:
+  version "1.22.12"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.22.12.tgz#5cbdd38720ffd1857da695331faee9f634bcb5d7"
+  integrity sha512-u5Rxn+dKTPCW5/11kMNxtmqKsxCjcpnqj9CaJoru1NqeJ0DOa9rOM00e0HqmseTAatGkKoLY+jaNecMYevu1gg==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 
