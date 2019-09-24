@@ -15,12 +15,14 @@ Installation
     template: api
     content_type: json
 ```
-More info about the `routes.yaml` file [here](https://docs.ghost.org/api/handlebars-themes/routing/).
-After that you can customize the `api.hbs` file with your data, just make sure the structure remains the same.
 
-4. Additionally you should replace all the image in the `assets/images` folder. You can use [this useful tool](http://realfavicongenerator.net/).
+*More info about the `routes.yaml` file [here](https://docs.ghost.org/api/handlebars-themes/routing/).*
 
-After you've completed the steps above, you can zip the theme and upload it.
+4. After that you can customize the `api.hbs` file with your data, just make sure the structure remains the same.
+
+5. Additionally you should replace all the image in the `assets/images` folder. You can use [this useful tool](http://realfavicongenerator.net/).
+
+6. After you've completed the steps above, you can zip the theme and upload it.
 
 Development
 --
