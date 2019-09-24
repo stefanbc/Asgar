@@ -22,8 +22,6 @@ After that you can customize the `api.hbs` file with your data, just make sure t
 
 After you've completed the steps above, you can zip the theme and upload it.
 
-**This theme is compatible with Ghost 2.x.**
-
 Development
 --
 
