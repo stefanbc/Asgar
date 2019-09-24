@@ -1,4 +1,4 @@
-Asgar https://travis-ci.com/stefanbc/Asgar.svg?branch=master
+Asgar ![build](https://travis-ci.com/stefanbc/Asgar.svg?branch=master)
 ==
 
 A 2 column, free and open source theme for Ghost.
