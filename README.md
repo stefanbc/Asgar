@@ -1,7 +1,7 @@
-Asgar
+Asgar https://travis-ci.com/stefanbc/Asgar.svg?branch=master
 ==
 
-A free, open source theme for Ghost.
+A 2 column, free and open source theme for Ghost.
 
 Instalation
 --
