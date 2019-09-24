@@ -1,9 +1,9 @@
 Asgar ![build](https://travis-ci.com/stefanbc/Asgar.svg?branch=master)
 ==
 
-A 2 column, free and open source theme for Ghost.
+A two column, free and open source theme for Ghost.
 
-Instalation
+Installation
 --
 
 1. Download the theme from GitHub.
@@ -24,7 +24,7 @@ After you've completed the steps above, you can zip the theme and upload it.
 
 **This theme is compatible with Ghost 2.x.**
 
-Developers
+Development
 --
 
 You can install all the theme dependencies using:
