@@ -1,8 +1,17 @@
+/**
+ * @description Main class for the Asgar Ghost Theme
+ * @export
+ * @class Asgar
+ */
 export default class Asgar {
     constructor() {
         this.loadData();
     }
 
+    /**
+     * @description Loads data on content load using an async connection
+     * @memberof Asgar
+     */
     loadData() {
         document.addEventListener("DOMContentLoaded", () => {
 
@@ -27,6 +36,11 @@ export default class Asgar {
         });
     }
 
+    /**
+     * @description Adds the data to each element based on the page that has been loaded
+     * @param {*} data
+     * @memberof Asgar
+     */
     addData(data) {
         data = JSON.parse(data);
 
@@ -56,6 +70,13 @@ export default class Asgar {
         }
     }
 
+    /**
+     * @description Adds an item to it's parent element
+     * @param {*} element
+     * @param {*} parentElement
+     * @param {boolean} [table=true]
+     * @memberof Asgar
+     */
     addItem(element, parentElement, table = true) {
         if (table) {
             let item = document.createElement("tr");
@@ -68,10 +89,19 @@ export default class Asgar {
         }
     }
 
+    /**
+     * @description Checkes if the current page is one of the supported pages
+     * @returns boolean
+     * @memberof Asgar
+     */
     checkURL() {
         return window.location.href.includes('/projects') || window.location.href.includes('/speaking') || window.location.href.includes('/about');
     }
 
+    /**
+     * @description Toggles the loading icon
+     * @memberof Asgar
+     */
     toggleLoading() {
         let loading = document.getElementsByClassName("fa-sync")[0];
 

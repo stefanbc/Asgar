@@ -1,0 +1,18 @@
+// playfair-display-regular - latin
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Playfair Display Regular'), local('PlayfairDisplay-Regular'),
+    url('../fonts/playfair-display-v15-latin-regular.woff2') format('woff2'),
+    url('../fonts/playfair-display-v15-latin-regular.woff') format('woff');
+}
+// playfair-display-700 - latin
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Playfair Display Bold'), local('PlayfairDisplay-Bold'),
+    url('../fonts/playfair-display-v15-latin-700.woff2') format('woff2'),
+    url('../fonts/playfair-display-v15-latin-700.woff') format('woff');
+}
