@@ -1,4 +1,4 @@
-Asgar ![build](https://travis-ci.com/stefanbc/Asgar.svg?branch=master) ![maintainability](https://api.codeclimate.com/v1/badges/db551b4c7a25f474e729/maintainability)
+Asgar ![build](https://travis-ci.com/stefanbc/Asgar.svg?branch=master) ![maintainability](https://api.codeclimate.com/v1/badges/db551b4c7a25f474e729/maintainability) ![vulnerabilities](https://snyk.io//test/github/stefanbc/Asgar/badge.svg?targetFile=package.json)
 ==
 
 A two column, free and open source theme for Ghost.
