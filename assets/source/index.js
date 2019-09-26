@@ -44,30 +44,40 @@ export default class Asgar {
     addData(data) {
         data = JSON.parse(data);
 
-        let author_social = document.getElementsByClassName("author-social")[0],
-            projects = document.getElementsByClassName("projects-list")[0],
-            events = document.getElementsByClassName("events-list")[0];
+        let authorSocial = this.getElement("author-social"),
+            projects = this.getElement("projects-list"),
+            events = this.getElement("events-list");
 
-        if(author_social) {
+        if(authorSocial) {
             data.social_urls.forEach(object => {
                 let element = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon == 'envelope' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`;
-                this.addItem(element, author_social);
+                this.addElement(element, authorSocial);
             });
         }
 
         if(projects) {
             data.projects.forEach(object => {
                 let element = `<td>${object.name}</td><td>${object.description}</td><td class="text-center"><a href="${object.url}" title="Fork ${object.name}" target="_blank"><i class="fas fa-code-branch"></i></a></td>`;
-                this.addItem(element, projects);
+                this.addElement(element, projects);
             });
         }
 
         if(events) {
             data.events.forEach(object => {
                 let element = `<td>${object.name}</td><td>${object.year}</td><td class="text-center"><div class="row">${object.slides ? `<div class="one-half column"><a href="${object.slides}" title="Slides"><i class="fas fa-file-powerpoint"></i></a></div>` : ''}${object.video ? `<div class="one-half column"><a href="${object.video}" title="Video"><i class="fas fa-video"></i></a></div>` : ''}${object.url ? `<div class="one-half column"><a href="${object.url}" title="More"><i class="fas fa-link"></i></a></div>` : ''}</div></td>`;
-                this.addItem(element, events);
+                this.addElement(element, events);
             });
         }
+    }
+
+    /**
+     * @description Retrive an element using the class name
+     * @param {*} element
+     * @returns element
+     * @memberof Asgar
+     */
+    getElement(element) {
+        return document.getElementsByClassName(element)[0];
     }
 
     /**
@@ -77,14 +87,13 @@ export default class Asgar {
      * @param {boolean} [table=true]
      * @memberof Asgar
      */
-    addItem(element, parentElement, table = true) {
+    addElement(element, parentElement, table = true) {
+        let item = document.createElement(table ? "tr" : "span");
+        item.innerHTML = element;
+
         if (table) {
-            let item = document.createElement("tr");
-            item.innerHTML = element;
             parentElement.getElementsByTagName('tbody')[0].appendChild(item);
         } else {
-            let item = document.createElement("span");
-            item.innerHTML = element;
             parentElement.appendChild(item);
         }
     }
