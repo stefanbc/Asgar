@@ -4,6 +4,11 @@
  * @class Asgar
  */
 export default class Asgar {
+
+    /**
+     * Creates an instance of Asgar.
+     * @memberof Asgar
+     */
     constructor() {
         this.loadData();
     }
@@ -22,8 +27,6 @@ export default class Asgar {
                 if (xhr.status >= 200 && xhr.status < 300) {
                     this.toggleLoading();
                     this.addData(xhr.response);
-                } else {
-                    console.log('Could not connect to the api!');
                 }
 
             };
@@ -50,7 +53,7 @@ export default class Asgar {
 
         if(authorSocial) {
             data.social_urls.forEach(object => {
-                let element = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon == 'envelope' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`;
+                let element = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon === 'envelope' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`;
                 this.addElement(element, authorSocial);
             });
         }
@@ -120,4 +123,4 @@ export default class Asgar {
     }
 }
 
-const run = new Asgar();
+Asgar();
