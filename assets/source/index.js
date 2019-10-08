@@ -10,6 +10,25 @@ export default class Asgar {
      * @memberof Asgar
      */
     constructor() {
+        this.apiURL = 'custom/api';
+        this.pages = [
+            {
+                name: 'about',
+                template: '<a href="${item.url}" title="${item.name}" target="_blank" rel="noopener"><i class="${item.icon === "envelope" ? "fas" : "fab"} fa-${item.icon}" aria-hidden="true"></i></a>',
+                type: 1
+            },
+            {
+                name: 'projects',
+                template: '<td>${item.name}</td><td>${item.description}</td><td class="text-center"><a href="${item.url}" title="Fork ${item.name}" target="_blank"><i class="fas fa-code-branch"></i></a></td>',
+                type: 0
+            },
+            {
+                name: 'speaking',
+                template: '<td>${item.name}</td><td>${item.year}</td><td class="text-center"><div class="row">${item.slides ? `<div class="one-half column"><a href="${item.slides}" title="Slides"><i class="fas fa-file-powerpoint"></i></a></div>` : ""}${item.video ? `<div class="one-half column"><a href="${item.video}" title="Video"><i class="fas fa-video"></i></a></div>` : ""}${item.url ? `<div class="one-half column"><a href="${item.url}" title="More"><i class="fas fa-link"></i></a></div>` : ""}</div></td>',
+                type: 0
+            }
+        ];
+
         this.loadData();
     }
 
@@ -32,7 +51,7 @@ export default class Asgar {
             };
 
             if (this.checkURL()) {
-                xhr.open('GET', '/custom/api');
+                xhr.open('GET', `/${this.apiURL}`);
                 xhr.send();
             }
 
@@ -46,31 +65,26 @@ export default class Asgar {
      */
     addData(data) {
         data = JSON.parse(data);
+        let parentObject = [];
 
-        let authorSocial = this.getElement("author-social"),
-            projects = this.getElement("projects-list"),
-            events = this.getElement("events-list");
+        this.pages.forEach(page => {
+            if (this.getParentElement(`${page.name}-list`)) {
+                parentObject[page.name] = {
+                    parentElement: this.getParentElement(`${page.name}-list`),
+                    template: page.template,
+                    type: page.type,
+                    data: data[page.name]
+                };
+            }
+        });
 
-        if(authorSocial) {
-            data.social_urls.forEach(object => {
-                let element = `<a href="${object.url}" title="${object.name}" target="_blank" rel="noopener"><i class="${object.icon === 'envelope' ? 'fas' : 'fab'} fa-${object.icon}" aria-hidden="true"></i></a>`;
-                this.addElement(element, authorSocial);
-            });
-        }
-
-        if(projects) {
-            data.projects.forEach(object => {
-                let element = `<td>${object.name}</td><td>${object.description}</td><td class="text-center"><a href="${object.url}" title="Fork ${object.name}" target="_blank"><i class="fas fa-code-branch"></i></a></td>`;
-                this.addElement(element, projects);
-            });
-        }
-
-        if(events) {
-            data.events.forEach(object => {
-                let element = `<td>${object.name}</td><td>${object.year}</td><td class="text-center"><div class="row">${object.slides ? `<div class="one-half column"><a href="${object.slides}" title="Slides"><i class="fas fa-file-powerpoint"></i></a></div>` : ''}${object.video ? `<div class="one-half column"><a href="${object.video}" title="Video"><i class="fas fa-video"></i></a></div>` : ''}${object.url ? `<div class="one-half column"><a href="${object.url}" title="More"><i class="fas fa-link"></i></a></div>` : ''}</div></td>`;
-                this.addElement(element, events);
-            });
-        }
+        parentObject.forEach(object => {
+            if(object.parentElement) {
+                object.data.forEach(item => {
+                    this.addChildElement(item.template, object.parentElement, object.type);
+                });
+            }
+        });
     }
 
     /**
@@ -79,22 +93,22 @@ export default class Asgar {
      * @returns element
      * @memberof Asgar
      */
-    getElement(element) {
+    getParentElement(element) {
         return document.getElementsByClassName(element)[0];
     }
 
     /**
-     * @description Adds an item to it's parent element
-     * @param {*} element
+     * @description Add a child element to it's parent element
+     * @param {*} childElement
      * @param {*} parentElement
-     * @param {boolean} [table=true]
+     * @param {number} [type=0]
      * @memberof Asgar
      */
-    addElement(element, parentElement, table = true) {
-        let item = document.createElement(table ? "tr" : "span");
-        item.innerHTML = element;
+    addChildElement(childElement, parentElement, type = 0) {
+        let item = document.createElement(type === 0 ? "tr" : "span");
+        item.innerHTML = childElement;
 
-        if (table) {
+        if (type === 0) {
             parentElement.getElementsByTagName('tbody')[0].appendChild(item);
         } else {
             parentElement.appendChild(item);
@@ -107,7 +121,7 @@ export default class Asgar {
      * @memberof Asgar
      */
     checkURL() {
-        return window.location.href.includes('/projects') || window.location.href.includes('/speaking') || window.location.href.includes('/about');
+        return this.pages.includes(location.pathname.replace(/\//ig, ''));
     }
 
     /**
@@ -123,4 +137,5 @@ export default class Asgar {
     }
 }
 
-Asgar();
+const asgar = new Asgar();
+asgar();
