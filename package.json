@@ -58,7 +58,8 @@
     "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css",
     "dev": "yarn clean && yarn mkdir && yarn build-css-dev && yarn build-js-dev",
     "prod": "yarn clean && yarn mkdir && yarn build-css-prod && yarn build-js-prod",
-    "deploy": "yarn prod && yarn zip && yarn validate"
+    "deploy": "yarn prod && yarn zip && yarn validate",
+    "deploy-dev": "yarn dev && yarn zip"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",

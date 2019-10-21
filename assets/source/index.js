@@ -3,7 +3,7 @@
  * @export
  * @class Asgar
  */
-export default class Asgar {
+class Asgar {
 
     /**
      * Creates an instance of Asgar.
@@ -14,22 +14,20 @@ export default class Asgar {
         this.pages = [
             {
                 name: 'about',
-                template: '<a href="${item.url}" title="${item.name}" target="_blank" rel="noopener"><i class="${item.icon === "envelope" ? "fas" : "fab"} fa-${item.icon}" aria-hidden="true"></i></a>',
+                template: '<a href="${url}" title="${name}" target="_blank" rel="noopener"><i class="${icon === "envelope" ? "fas" : "fab"} fa-${icon}" aria-hidden="true"></i></a>',
                 type: 1
             },
             {
                 name: 'projects',
-                template: '<td>${item.name}</td><td>${item.description}</td><td class="text-center"><a href="${item.url}" title="Fork ${item.name}" target="_blank"><i class="fas fa-code-branch"></i></a></td>',
+                template: '<td>${name}</td><td>${description}</td><td class="text-center"><a href="${url}" title="Fork ${name}" target="_blank"><i class="fas fa-code-branch"></i></a></td>',
                 type: 0
             },
             {
                 name: 'speaking',
-                template: '<td>${item.name}</td><td>${item.year}</td><td class="text-center"><div class="row">${item.slides ? `<div class="one-half column"><a href="${item.slides}" title="Slides"><i class="fas fa-file-powerpoint"></i></a></div>` : ""}${item.video ? `<div class="one-half column"><a href="${item.video}" title="Video"><i class="fas fa-video"></i></a></div>` : ""}${item.url ? `<div class="one-half column"><a href="${item.url}" title="More"><i class="fas fa-link"></i></a></div>` : ""}</div></td>',
+                template: '<td>${name}</td><td>${year}</td><td class="text-center"><div class="row">${slides ? `<div class="one-half column"><a href="${slides}" title="Slides"><i class="fas fa-file-powerpoint"></i></a></div>` : ""}${video ? `<div class="one-half column"><a href="${video}" title="Video"><i class="fas fa-video"></i></a></div>` : ""}${url ? `<div class="one-half column"><a href="${url}" title="More"><i class="fas fa-link"></i></a></div>` : ""}</div></td>',
                 type: 0
             }
         ];
-
-        this.loadData();
     }
 
     /**
@@ -38,7 +36,6 @@ export default class Asgar {
      */
     loadData() {
         document.addEventListener("DOMContentLoaded", () => {
-
             let xhr = new XMLHttpRequest();
 
             xhr.onload = () => {
@@ -64,27 +61,27 @@ export default class Asgar {
      * @memberof Asgar
      */
     addData(data) {
-        data = JSON.parse(data);
-        let parentObject = [];
+        const parsedData = JSON.parse(data);
+        let currentPage = {};
 
         this.pages.forEach(page => {
             if (this.getParentElement(`${page.name}-list`)) {
-                parentObject[page.name] = {
-                    parentElement: this.getParentElement(`${page.name}-list`),
-                    template: page.template,
-                    type: page.type,
-                    data: data[page.name]
+                currentPage = {
+                    pageElement: this.getParentElement(`${page.name}-list`),
+                    childTemplate: page.template,
+                    childType: page.type,
+                    data: parsedData[page.name]
                 };
             }
         });
 
-        parentObject.forEach(object => {
-            if(object.parentElement) {
-                object.data.forEach(item => {
-                    this.addChildElement(item.template, object.parentElement, object.type);
-                });
-            }
-        });
+        if (currentPage) {
+            let template = this.parseTemplate(currentPage.childTemplate);
+
+            currentPage.data.forEach(item => {
+                this.addChildElement(template(item), currentPage.pageElement, currentPage.childType);
+            });
+        }
     }
 
     /**
@@ -99,16 +96,16 @@ export default class Asgar {
 
     /**
      * @description Add a child element to it's parent element
-     * @param {*} childElement
+     * @param {*} childTemplate
      * @param {*} parentElement
-     * @param {number} [type=0]
+     * @param {number} [childType=0]
      * @memberof Asgar
      */
-    addChildElement(childElement, parentElement, type = 0) {
-        let item = document.createElement(type === 0 ? "tr" : "span");
-        item.innerHTML = childElement;
+    addChildElement(childTemplate, parentElement, childType = 0) {
+        let item = document.createElement(childType === 0 ? "tr" : "span");
+        item.innerHTML = childTemplate;
 
-        if (type === 0) {
+        if (childType === 0) {
             parentElement.getElementsByTagName('tbody')[0].appendChild(item);
         } else {
             parentElement.appendChild(item);
@@ -121,7 +118,7 @@ export default class Asgar {
      * @memberof Asgar
      */
     checkURL() {
-        return this.pages.includes(location.pathname.replace(/\//ig, ''));
+        return this.pages.some(page => page.name === location.pathname.replace(/\//ig, ''));
     }
 
     /**
@@ -135,7 +132,29 @@ export default class Asgar {
             loading.style.display = 'none';
         }
     }
+
+    /**
+     * @description Parses string to template literal
+     * @param {*} literal string
+     * @returns Function that interpolates the template literal with data values
+     * @memberof Asgar
+     */
+    parseTemplate(literal) {
+        return (data) => {
+            const dataKeys = [];
+            const dataVals = [];
+
+            for (let key in data) {
+                dataKeys.push(key);
+                dataVals.push(data[key]);
+            }
+
+            let func = new Function(...dataKeys, "return `" + literal + "`;");
+
+            return func(...dataVals);
+        }
+    }
 }
 
 const asgar = new Asgar();
-asgar();
+asgar.loadData();

@@ -168,7 +168,7 @@ main {
             }
         }
 
-        .social-list {
+        .about-list {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;
@@ -203,7 +203,7 @@ main {
                 }
             }
 
-            &.events-list {
+            &.speaking-list {
                 table {
                     tr {
                         td:first-child {
