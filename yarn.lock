@@ -789,10 +789,10 @@
     mkdirp "0.5.0"
     yauzl "2.4.1"
 
-"@tryghost/pretty-cli@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@tryghost/pretty-cli/-/pretty-cli-1.2.1.tgz#b419e936c81c8aabf7f081645751c17004a5bb09"
-  integrity sha512-SFu5CcljG7mqxcA/J2WFE9M/bbpzJG0oVqT7P/P0HRbcTgBmQ5nMczO70WNASSqBglAh/uR34K0HVz5qynxyDw==
+"@tryghost/pretty-cli@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@tryghost/pretty-cli/-/pretty-cli-1.2.2.tgz#bebc31cabdba3a60c0848b9fdb39f1f4846b4017"
+  integrity sha512-3GK42+Ju7blugavxmGZoNBhkKXtd4NNcXGE9FZ99+tXLiFs+Y5psVLm9dK3DJB6lgt2Keo0GbpJxsh57ivLG2w==
   dependencies:
     chalk "^2.4.1"
     sywac "^1.2.1"
@@ -2623,13 +2623,13 @@ grapheme-breaker@^0.3.2:
     brfs "^1.2.0"
     unicode-trie "^0.3.1"
 
-gscan@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/gscan/-/gscan-3.1.0.tgz#31a7487d58acd198d3976458054e6f16b7362e46"
-  integrity sha512-hXZBN4RN4a8yBXIwp2otNlaRCCQlGfV6feHU0HMDfyJ5wi8PnyHYwYEvEEjYEfiTZNgBrZxVF49XX/7z7Pd/hg==
+gscan@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/gscan/-/gscan-3.1.1.tgz#e86c2b0f93df7b1f85452584d3dbcb0b766bf901"
+  integrity sha512-As5E9ghdLfEmp+JjFcZhkkPNPzsLNgMj0r/CVkgwcHcQ1rTu4WhLKH3FsZIZPObCwqWjNxJeMTU+Tf4hrDKXfw==
   dependencies:
     "@tryghost/extract-zip" "1.6.6"
-    "@tryghost/pretty-cli" "1.2.1"
+    "@tryghost/pretty-cli" "1.2.2"
     bluebird "^3.4.6"
     chalk "^2.0.0"
     common-tags "^1.8.0"
@@ -4946,10 +4946,10 @@ safe-regex@^1.1.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
-sass@^1.23.1:
-  version "1.23.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.23.1.tgz#0e5b72ba2bd9f0229a637d33f8dd5bf2d810beb3"
-  integrity sha512-zQzJ3UETUWOMd/pJJGH/zvRsBVO97m11RcpfUhcQUHEXf0yHUBgOIE/Nw8aK0m1XyVJPeq228iIK7gVxsJ/Puw==
+sass@^1.23.3:
+  version "1.23.3"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.23.3.tgz#f07503b9e8d2bcf06ef69e8beea5d085589b1620"
+  integrity sha512-1DKRZxJMOh4Bme16AbWTyYeJAjTlrvw2+fWshHHaepeJfGq2soFZTnt0YhWit+bohtDu4LdyPoEj6VFD4APHog==
   dependencies:
     chokidar ">=2.0.0 <4.0.0"
 

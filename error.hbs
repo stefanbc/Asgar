@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>{{code}} - {{message}} | {{@site.title}} - {{@site.description}}</title>
+    <title>{{statusCode}} - {{message}} | {{@site.title}} - {{@site.description}}</title>
 
     {{> "meta"}}
 
@@ -36,7 +36,7 @@
                 <section class="error-content error-404 js-error-container text-center">
                   <section class="error-details">
                     <section class="error-message">
-                      <h1 class="error-code"><i class="fas fa-bomb"></i> {{code}} <i class="fas fa-bomb"></i></h1>
+                      <h1 class="error-code"><i class="fas fa-bomb"></i> {{statusCode}} <i class="fas fa-bomb"></i></h1>
                       <h2 class="error-description">{{message}}</h2>
                       <a class="error-link" href="{{@site.url}}">Go back →</a>
                     </section>

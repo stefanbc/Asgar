@@ -197,6 +197,18 @@ main {
         .table-wrapper {
             table {
                 tr {
+                    &:first-child {
+                        td {
+                            padding-top: 0;
+                        }
+                    }
+
+                    &:last-child {
+                        td {
+                            border: 0;
+                        }
+                    }
+
                     td:first-child {
                         width: 25%;
                     }

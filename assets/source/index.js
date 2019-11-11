@@ -1,3 +1,5 @@
+import { PAGES } from './pages'
+
 /**
  * @description Main class for the Asgar Ghost Theme
  * @export
@@ -11,23 +13,7 @@ class Asgar {
      */
     constructor() {
         this.apiURL = 'custom/api';
-        this.pages = [
-            {
-                name: 'about',
-                template: '<a href="${url}" title="${name}" target="_blank" rel="noopener"><i class="${icon === "envelope" ? "fas" : "fab"} fa-${icon}" aria-hidden="true"></i></a>',
-                type: 1
-            },
-            {
-                name: 'projects',
-                template: '<td>${name}</td><td>${description}</td><td class="text-center"><a href="${url}" title="Fork ${name}" target="_blank"><i class="fas fa-code-branch"></i></a></td>',
-                type: 0
-            },
-            {
-                name: 'speaking',
-                template: '<td>${name}</td><td>${year}</td><td class="text-center"><div class="row">${slides ? `<div class="one-half column"><a href="${slides}" title="Slides"><i class="fas fa-file-powerpoint"></i></a></div>` : ""}${video ? `<div class="one-half column"><a href="${video}" title="Video"><i class="fas fa-video"></i></a></div>` : ""}${url ? `<div class="one-half column"><a href="${url}" title="More"><i class="fas fa-link"></i></a></div>` : ""}</div></td>',
-                type: 0
-            }
-        ];
+        this.pages = PAGES;
     }
 
     /**
@@ -41,13 +27,14 @@ class Asgar {
             xhr.onload = () => {
 
                 if (xhr.status >= 200 && xhr.status < 300) {
+                    this.currentPage = this.getCurrentPage();
                     this.toggleLoading();
                     this.addData(xhr.response);
                 }
 
             };
 
-            if (this.checkURL()) {
+            if (this.getCurrentPage()) {
                 xhr.open('GET', `/${this.apiURL}`);
                 xhr.send();
             }
@@ -62,24 +49,16 @@ class Asgar {
      */
     addData(data) {
         const parsedData = JSON.parse(data);
-        let currentPage = {};
+        let parentElement = this.getParentElement(`${this.currentPage.name}-list`);
 
-        this.pages.forEach(page => {
-            if (this.getParentElement(`${page.name}-list`)) {
-                currentPage = {
-                    pageElement: this.getParentElement(`${page.name}-list`),
-                    childTemplate: page.template,
-                    childType: page.type,
-                    data: parsedData[page.name]
-                };
-            }
-        });
+        if(this.currentPage && parentElement) {
+            this.currentPage.pageElement = parentElement;
+            this.currentPage.data = parsedData[this.currentPage.name];
 
-        if (currentPage) {
-            let template = this.parseTemplate(currentPage.childTemplate);
+            let template = this.parseTemplate(this.currentPage.childTemplate);
 
-            currentPage.data.forEach(item => {
-                this.addChildElement(template(item), currentPage.pageElement, currentPage.childType);
+            this.currentPage.data.forEach(item => {
+                this.addChildElement(template(item), this.currentPage.pageElement, this.currentPage.childType);
             });
         }
     }
@@ -98,27 +77,38 @@ class Asgar {
      * @description Add a child element to it's parent element
      * @param {*} childTemplate
      * @param {*} parentElement
-     * @param {number} [childType=0]
+     * @param {string} [childType='row']
      * @memberof Asgar
      */
-    addChildElement(childTemplate, parentElement, childType = 0) {
-        let item = document.createElement(childType === 0 ? "tr" : "span");
+    addChildElement(childTemplate, parentElement, childType = 'row') {
+        let item = document.createElement(childType === 'row' ? "tr" : "span");
         item.innerHTML = childTemplate;
 
-        if (childType === 0) {
+        if (childType === 'row') {
             parentElement.getElementsByTagName('tbody')[0].appendChild(item);
-        } else {
+        } else if (childType === 'col') {
             parentElement.appendChild(item);
         }
     }
 
     /**
-     * @description Checkes if the current page is one of the supported pages
-     * @returns boolean
+     * @description Return the active page name
+     * @returns string with the page name
      * @memberof Asgar
      */
-    checkURL() {
-        return this.pages.some(page => page.name === location.pathname.replace(/\//ig, ''));
+    getCurrentPageName() {
+        return location.pathname.replace(/\//ig, '');
+    }
+
+    /**
+     * @description Return the active page meta data
+     * @returns object of the current active page
+     * @memberof Asgar
+     */
+    getCurrentPage() {
+        if (this.getCurrentPageName()) {
+            return this.pages.find(({ name }) => name === this.getCurrentPageName());
+        }
     }
 
     /**
