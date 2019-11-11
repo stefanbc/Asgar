@@ -1,4 +1,4 @@
-import { PAGES } from './pages'
+import { PAGES } from './pages';
 
 /**
  * @description Main class for the Asgar Ghost Theme
@@ -134,14 +134,16 @@ class Asgar {
             const dataKeys = [];
             const dataVals = [];
 
-            for (let key in data) {
-                dataKeys.push(key);
-                dataVals.push(data[key]);
+            if (data) {
+                for (let key in data) {
+                    dataKeys.push(key);
+                    dataVals.push(data[key]);
+                }
+
+                let func = new Function(...dataKeys, "return `" + literal + "`;");
+
+                return func(...dataVals);
             }
-
-            let func = new Function(...dataKeys, "return `" + literal + "`;");
-
-            return func(...dataVals);
         }
     }
 }
