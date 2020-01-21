@@ -1,3 +1,4 @@
+import { Storage } from './storage';
 import { PAGES } from './pages';
 
 /**
@@ -14,6 +15,7 @@ class Asgar {
     constructor() {
         this.apiURL = 'custom/api';
         this.pages = PAGES;
+        this.storage = new Storage();
     }
 
     /**
@@ -39,6 +41,30 @@ class Asgar {
                 xhr.send();
             }
 
+            this.initEvents();
+        });
+    }
+
+    /**
+     * @description Initialize global events
+     * @memberof Asgar
+     */
+    initEvents() {
+        let colorSwitcher = this.getParentElement('color-switcher'),
+            body = document.getElementsByTagName('body')[0];
+
+        if(this.storage.get('asgar-dm')) {
+            body.classList.add('dark-mode');
+        }
+
+        colorSwitcher.addEventListener('click', () => {
+            if (body.classList.contains("dark-mode")) {
+                body.classList.remove('dark-mode');
+                this.storage.remove('asgar-dm');
+            } else {
+                body.classList.add('dark-mode');
+                this.storage.set('asgar-dm', true);
+            }
         });
     }
 

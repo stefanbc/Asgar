@@ -1,0 +1,46 @@
+body {
+    &.dark-mode {
+        background: $dark-color-1;
+        color: $dark-color-0;
+
+        &::selection { background: $dark-color-3; }
+
+        a {
+            color: $dark-color-0;
+
+            &:hover {
+                color: $dark-color-4;
+            }
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $dark-color-0;
+        }
+
+        select:focus,
+        textarea:focus {
+            border-color: $dark-color-2;
+        }
+
+        input {
+            &[type='email']:focus,
+            &[type='number']:focus,
+            &[type='password']:focus,
+            &[type='search']:focus,
+            &[type='tel']:focus,
+            &[type='text']:focus,
+            &[type='url']:focus {
+                border-color: $dark-color-2;
+            }
+        }
+
+        blockquote {
+            color: $dark-color-3;
+        }
+    }
+}

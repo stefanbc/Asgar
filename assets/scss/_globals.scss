@@ -9,14 +9,15 @@ body {
     font-size: 1.6em;
     letter-spacing: .01rem;
     line-height: 1.6;
-    background: $color-6;
+    background: $color-1;
+    color: $color-0;
 }
 
 ::selection { background: $color-3; }
 
 a {
     text-decoration: none;
-    color: lighten($color-0, 15%);
+    color: $color-0;
     cursor: pointer;
     @extend %transition;
 
