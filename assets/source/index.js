@@ -51,19 +51,29 @@ class Asgar {
      */
     initEvents() {
         let colorSwitcher = this.getParentElement('color-switcher'),
-            body = document.getElementsByTagName('body')[0];
+            body = document.getElementsByTagName('body')[0],
+            setDarkMode = (status) => {
+                if(status) {
+                    colorSwitcher.classList.add('fa-flip-horizontal');
+                    body.classList.add('dark-mode');
+                } else {
+                    colorSwitcher.classList.remove('fa-flip-horizontal');
+                    body.classList.remove('dark-mode');
+                }
 
-        if(this.storage.get('asgar-dm')) {
-            body.classList.add('dark-mode');
+                this.storage.set('asgar-dm', status);
+            };
+
+        // Detect is the system is in dark mode on first visit or if the user turned on dark mode
+        if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && this.storage.get('asgar-dm') === null) || this.storage.get('asgar-dm')) {
+            setDarkMode(true);
         }
 
         colorSwitcher.addEventListener('click', () => {
-            if (body.classList.contains("dark-mode")) {
-                body.classList.remove('dark-mode');
-                this.storage.remove('asgar-dm');
+            if (!body.classList.contains("dark-mode")) {
+                setDarkMode(true);
             } else {
-                body.classList.add('dark-mode');
-                this.storage.set('asgar-dm', true);
+                setDarkMode(false);
             }
         });
     }

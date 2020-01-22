@@ -1,15 +1,15 @@
 body {
     &.dark-mode {
-        background: $dark-color-1;
-        color: $dark-color-0;
+        background: $dm-dark;
+        color: $dm-light;
 
-        &::selection { background: $dark-color-3; }
+        &::selection { background: $dm-grey; }
 
         a {
-            color: $dark-color-0;
+            color: $dm-light;
 
             &:hover {
-                color: $dark-color-4;
+                color: $dm-red;
             }
         }
 
@@ -19,12 +19,12 @@ body {
         h4,
         h5,
         h6 {
-            color: $dark-color-0;
+            color: $dm-light;
         }
 
         select:focus,
         textarea:focus {
-            border-color: $dark-color-2;
+            border-color: $dm-red;
         }
 
         input {
@@ -35,12 +35,92 @@ body {
             &[type='tel']:focus,
             &[type='text']:focus,
             &[type='url']:focus {
-                border-color: $dark-color-2;
+                border-color: $dm-red;
             }
         }
 
         blockquote {
-            color: $dark-color-3;
+            color: $dm-grey;
+        }
+
+        hr {
+            border-color: $dm-grey;
+        }
+
+        code {
+            background-color: $dm-dark;
+            color: $dm-light;
+            border-color: $dm-grey;
+        }
+
+        nav {
+            &.header-navigation {
+                border-color: $dm-grey;
+
+                ul {
+                    li {
+                        &.nav-current {
+                            a {
+                                color: $dm-red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            article {
+                .entry-author {
+                    &::after {
+                        background-color: $dm-grey;
+                    }
+                }
+            }
+
+            .posts {
+                article {
+                    &.featured-post {
+                        border-color: $dm-grey;
+                    }
+                }
+            }
+
+            .post-wrapper {
+                .post-extra {
+                    .post-tags {
+                        color: $dm-grey;
+                    }
+
+                    .post-share {
+                        a {
+                            color: $dm-grey;
+                        }
+                    }
+                }
+
+                .sidebar {
+                    .widget {
+                        li {
+                            border-color: $dm-grey;
+                        }
+                    }
+                }
+            }
+
+            .post-spacer {
+                border-color: $dm-grey;
+            }
+        }
+
+        footer {
+            border-color: $dm-grey;
+        }
+
+        .kg-bookmark-card {
+            .kg-bookmark-container {
+                border-color: $dm-grey;
+            }
         }
     }
 }
