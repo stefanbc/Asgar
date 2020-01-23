@@ -1,0 +1,20 @@
+name: PROD
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  prod:
+    name: Production Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install Dependencies, Build
+        run: |
+          npm install
+          npm run prod       
