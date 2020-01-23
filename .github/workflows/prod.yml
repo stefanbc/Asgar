@@ -14,7 +14,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '10.x'
+      - name: Install Yarn
+        uses: comchangs/action-yarn@v0.1-beta
       - name: Install Dependencies, Build
         run: |
-          npm install
-          npm run prod       
+          yarn install
+          yarn prod       
