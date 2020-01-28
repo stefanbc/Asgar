@@ -1,0 +1,22 @@
+name: PROD
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  prod:
+    name: Production Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Install Yarn
+        uses: comchangs/action-yarn@v0.1-beta
+      - name: Install Dependencies, Build
+        run: |
+          yarn install
+          yarn prod       
