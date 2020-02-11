@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+  <head>
     <title>{{statusCode}} - {{message}} | {{@site.title}} - {{@site.description}}</title>
 
     {{> "meta"}}
 
-    {{! Google+}}
-    <meta itemprop="image" content="{{@site.url}}{{asset '/images/logo.png'}}"/>
-    {{! Twitter}}
-    <meta name="twitter:image:src" content="{{@site.url}}{{asset '/images/logo.png'}}"/>
+    {{> "fonts"}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor.css"}}" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/index.css"}}" media="all" />
 
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset "css/vendor.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/index.css"}}" />
-
-    <script src="https://kit.fontawesome.com/9e4b90971b.js"></script>
+    <script rel="dns-prefetch" src="//kit.fontawesome.com/9e4b90971b.js"></script>
 
     {{!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --}}
     <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script rel="dns-prefetch" src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script rel="dns-prefetch" src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     {{ghost_head}}
   </head>
+
   <body class="{{body_class}}">
     <div id="content-wrapper" class="container">
       {{> "header"}}
       <main rol="main">
         <div class="gh-app">
           <div class="gh-viewport">
-              <div class="gh-view">
-                <section class="error-content error-404 js-error-container text-center">
-                  <section class="error-details">
-                    <section class="error-message">
-                      <h1 class="error-code"><i class="fas fa-bomb"></i> {{statusCode}} <i class="fas fa-bomb"></i></h1>
-                      <h2 class="error-description">{{message}}</h2>
-                      <a class="error-link" href="{{@site.url}}">Go back →</a>
-                    </section>
+            <div class="gh-view">
+              <section class="error-content error-404 js-error-container text-center">
+                <section class="error-details">
+                  <section class="error-message">
+                    <h1 class="error-code"><i class="fas fa-bomb"></i> {{statusCode}} <i class="fas fa-bomb"></i></h1>
+                    <h2 class="error-description">{{message}}</h2>
+                    <a class="error-link" href="{{@site.url}}">Go back →</a>
                   </section>
                 </section>
-                {{#if stack}}
-                  <section class="error-stack">
-                    <h3>Stack Trace</h3>
-                    <p><strong>{{message}}</strong></p>
-                    <ul class="error-stack-list">
-                      {{#foreach stack}}
-                        <li>
-                          at
-                          {{#if function}}<em class="error-stack-function">{{function}}</em>{{/if}}
-                          <span class="error-stack-file">({{at}})</span>
-                        </li>
-                      {{/foreach}}
-                    </ul>
-                  </section>
-                {{/if}}
-              </div>
+              </section>
+              {{#if stack}}
+              <section class="error-stack">
+                <h3>Stack Trace</h3>
+                <p><strong>{{message}}</strong></p>
+                <ul class="error-stack-list">
+                  {{#foreach stack}}
+                  <li>
+                    at
+                    {{#if function}}<em class="error-stack-function">{{function}}</em>{{/if}}
+                    <span class="error-stack-file">({{at}})</span>
+                  </li>
+                  {{/foreach}}
+                </ul>
+              </section>
+              {{/if}}
+            </div>
           </div>
         </div>
       </main>
       {{> "footer"}}
     </div>
+    <script src="{{asset "js/index.js"}}"></script>
     {{ghost_foot}}
   </body>
+
 </html>

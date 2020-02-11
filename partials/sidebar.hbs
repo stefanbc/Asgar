@@ -9,13 +9,13 @@
     <h6 class="widget-title">Recent posts</h6>
     <div class="widget-content">
         {{#get "posts" filter="id:-{{id}}" limit=@config.posts_per_page}}
-            <ul>
-                {{#foreach posts}}
-                    <li>
-                        <a href="{{url}}" title="{{title}}">{{title}}</a>
-                    </li>
-                {{/foreach}}
-            </ul>
+        <ul>
+            {{#foreach posts}}
+            <li>
+                <a href="{{url}}" title="{{title}}">{{title}}</a>
+            </li>
+            {{/foreach}}
+        </ul>
         {{/get}}
     </div>
 </section>
@@ -27,9 +27,9 @@
         <section class="post-tags">
             <ul>
                 {{#foreach tags}}
-                    <li>
-                        <a href="{{url}}" title="{{name}}">{{name}}</a>
-                    </li>
+                <li>
+                    <a href="{{url}}" title="{{name}}">{{name}}</a>
+                </li>
                 {{/foreach}}
             </ul>
         </section>

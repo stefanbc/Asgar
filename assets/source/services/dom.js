@@ -40,7 +40,17 @@ export class DOM {
      * @returns {boolean}
      * @memberof DOM
      */
-    hasClass(element, className) {
+    has(element, className) {
         return element.classList.contains(className);
+    }
+
+    /**
+     * @description Toggle a class on element
+     * @param {object} element
+     * @param {string} className
+     * @memberof DOM
+     */
+    toggle(element, className) {
+        element.classList.toggle(className);
     }
 }

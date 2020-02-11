@@ -55,7 +55,7 @@
   ],
   "scripts": {
     "clean": "rimraf ./assets/css && rimraf ./assets/js && rimraf ./asgar.zip",
-    "mkdir": "mkdir -p ./assets/css && mkdir -p ./assets/js",
+    "mkdir": "mkdirp -p ./assets/css && mkdirp -p ./assets/js",
     "zip": "zip -r9 asgar.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
     "validate": "gscan ./asgar.zip -z",
     "build-css-dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
@@ -73,9 +73,10 @@
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^3.3.0",
+    "gscan": "^3.3.1",
+    "mkdirp": "^1.0.3",
     "parcel-bundler": "^1.12.4",
-    "rimraf": "^3.0.1",
+    "rimraf": "^3.0.2",
     "sass": "^1.25.0"
   },
   "config": {

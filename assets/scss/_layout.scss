@@ -21,7 +21,8 @@ header {
 }
 
 nav {
-    &.header-navigation {
+    &.header-navigation,
+    &.footer-navigation {
         border-top: 1px solid $light;
         border-bottom: 1px solid $light;
         margin: 0 0 10rem;
@@ -51,6 +52,13 @@ nav {
                 }
             }
         }
+    }
+
+    &.footer-navigation {
+        border-top: 0;
+        border-bottom: 1px solid $light;
+        margin: 0 0 3rem;
+        font-style: normal;
     }
 }
 
@@ -281,7 +289,6 @@ main {
 
 footer {
     margin: 3rem 0 6rem;
-    padding-top: 3rem;
     border-top: 1px solid $light;
     font-style: italic;
 

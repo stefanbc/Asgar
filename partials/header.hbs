@@ -12,7 +12,7 @@
             </h1>
             <h6 class="subtitle">{{@site.description}}</h6>
         </div>
-        {{#if @labs.subscribers}}
+        {{#if @labs.members}}
         <div class="two columns">
             <a class="button" href="/subscribe">Subscribe</a>
         </div>
@@ -24,7 +24,7 @@
             </h1>
             <h6 class="subtitle">{{@site.description}}</h6>
         </div>
-        {{#if @labs.subscribers}}
+        {{#if @labs.members}}
         <div class="two columns">
             <a class="button" href="/subscribe">Subscribe</a>
         </div>
@@ -32,5 +32,6 @@
         {{/if}}
     </div>
 </header>
-
+{{#if @site.navigation}}
 {{navigation}}
+{{/if}}

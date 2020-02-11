@@ -54,7 +54,8 @@ body {
         }
 
         nav {
-            &.header-navigation {
+            &.header-navigation,
+            &.footer-navigation {
                 border-color: $dm-grey;
 
                 ul {

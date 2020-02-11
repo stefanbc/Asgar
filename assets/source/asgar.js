@@ -68,8 +68,8 @@ export class Asgar {
         let colorSwitcher = this.dom.get(".color-switcher"),
             body = this.dom.get("body"),
             setDarkMode = (status) => {
-                colorSwitcher.classList.toggle("fa-flip-horizontal");
-                body.classList.toggle("dark-mode");
+                this.dom.toggle(colorSwitcher, "fa-flip-horizontal");
+                this.dom.toggle(body, "dark-mode");
                 this.storage.set("asgar-dm", status);
             };
 
@@ -79,7 +79,7 @@ export class Asgar {
         }
 
         colorSwitcher.addEventListener("click", () => {
-            setDarkMode(!this.dom.hasClass(body, "dark-mode"));
+            setDarkMode(!this.dom.has(body, "dark-mode"));
         });
     }
 
