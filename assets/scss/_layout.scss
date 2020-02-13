@@ -193,6 +193,20 @@ main {
                     border-bottom: 1px dotted $grey;
                 }
 
+                .post-share {
+                    ul {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                        border-bottom: 1px dotted $grey;
+
+                        li {
+                            text-align: center;
+                            border-bottom: 0;
+                            font-size: 1.6em;
+                        }
+                    }
+                }
+
                 .post-tags {
                     ul {
                         display: grid;

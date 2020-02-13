@@ -1,10 +1,3 @@
-<section class="widget share">
-    <h6 class="widget-title">Share</h6>
-    <div class="widget-content">
-        {{> "share"}}
-    </div>
-</section>
-
 {{#if primary_tag}}
 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit=@config.posts_per_page as |related_posts|}}
 {{#if related_posts}}
@@ -25,6 +18,12 @@
 {{/if}}
 {{/get}}
 {{/if}}
+
+<section class="widget share">
+    <div class="widget-content">
+        {{> "share"}}
+    </div>
+</section>
 
 <section class="widget recent-posts">
     <h6 class="widget-title">Recent posts</h6>

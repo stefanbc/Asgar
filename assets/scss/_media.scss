@@ -15,6 +15,14 @@
             .author-meta {
                 text-align: center;
             }
+
+            .sidebar {
+                margin-top: 3rem;
+            }
+        }
+
+        .post-full-content {
+            margin-top: 3rem;
         }
 
         .author-meta {
@@ -38,6 +46,22 @@
 
             .form-group {
                 margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1024px) {
+    main {
+        .post-wrapper {
+            .sidebar {
+                .widget {
+                    .post-tags {
+                        ul {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                    }
+                }
             }
         }
     }
