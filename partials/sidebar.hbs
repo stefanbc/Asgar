@@ -5,17 +5,40 @@
     </div>
 </section>
 
+{{#if primary_tag}}
+{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit=@config.posts_per_page as |related_posts|}}
+{{#if related_posts}}
 <section class="widget recent-posts">
-    <h6 class="widget-title">Recent posts</h6>
+    {{#../primary_tag}}
+    <h6 class="widget-title">More in {{name}}</h6>
+    {{/../primary_tag}}
     <div class="widget-content">
-        {{#get "posts" filter="id:-{{id}}" limit=@config.posts_per_page}}
         <ul>
-            {{#foreach posts}}
+            {{#foreach related_posts}}
             <li>
                 <a href="{{url}}" title="{{title}}">{{title}}</a>
             </li>
             {{/foreach}}
         </ul>
+    </div>
+</section>
+{{/if}}
+{{/get}}
+{{/if}}
+
+<section class="widget recent-posts">
+    <h6 class="widget-title">Recent posts</h6>
+    <div class="widget-content">
+        {{#get "posts" filter="id:-{{id}}" limit=@config.posts_per_page as |recent_posts|}}
+        {{#if recent_posts}}
+        <ul>
+            {{#foreach recent_posts}}
+            <li>
+                <a href="{{url}}" title="{{title}}">{{title}}</a>
+            </li>
+            {{/foreach}}
+        </ul>
+        {{/if}}
         {{/get}}
     </div>
 </section>

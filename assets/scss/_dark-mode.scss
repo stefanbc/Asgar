@@ -41,6 +41,10 @@ body {
 
         blockquote {
             color: $dm-grey;
+
+            &::before {
+                color: $dm-light;
+            }
         }
 
         hr {
@@ -115,7 +119,10 @@ body {
         }
 
         footer {
-            border-color: $dm-grey;
+            .subscribe-form,
+            .copyright {
+                border-color: $dm-grey;
+            }
         }
 
         .kg-bookmark-card {

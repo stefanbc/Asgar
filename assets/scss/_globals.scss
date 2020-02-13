@@ -92,6 +92,20 @@ input {
     }
 }
 
+.button {
+    &.button-primary {
+        position: relative;
+        background-color: $red;
+        border-color: $red;
+
+        &:hover,
+        &:focus {
+            background-color: $dark-red;
+            border-color: $dark-red;
+        }
+    }
+}
+
 ul {
     list-style-type: none;
     margin: 0;

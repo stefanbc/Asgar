@@ -33,7 +33,14 @@
                             </dt>
                         </dl>
                         <section class="about-list">
-                            {{> "social"}}
+                            {{#if twitter}}
+                            <a href="{{twitter_url twitter}}" target="_blank" rel="noopener"><i class="fab fa-twitter"
+                                    aria-hidden="true"></i></a>
+                            {{/if}}
+                            {{#if facebook}}
+                            <a href="{{facebook_url facebook}}" target="_blank" rel="noopener"><i
+                                    class="fab fa-facebook" aria-hidden="true"></i></a>
+                            {{/if}}
                         </section>
                     </div>
                 </div>
