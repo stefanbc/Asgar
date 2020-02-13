@@ -3,7 +3,7 @@
   "description": "A two column, free and open source theme for Ghost",
   "demo": "https://asgar.stefancosma.xyz",
   "homepage": "https://github.com/stefanbc/Asgar#readme",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
