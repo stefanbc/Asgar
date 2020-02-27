@@ -35,11 +35,7 @@ You can install all the theme dependencies using:
 yarn install
 ```
 
-Available script you can run for development and production:
+Available scripts:
 
-* `yarn dev` - will build the whole theme for testing.
 * `yarn prod` - will build the whole theme for production.
-* `yarn watch` - will watch for any sass file modifications and will build.
-* `yarn zip` - will zip the theme for production.
-* `yarn validate` - will validate the zip created with the previous command.
 * `yarn deploy` - will build the theme for production, zip and validate.
