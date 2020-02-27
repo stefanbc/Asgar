@@ -1,5 +1,11 @@
 //
 // The vendor scss file
 // --------------------------------------------------
+$fa-font-path: '../fonts';
+
 @import '../../node_modules/normalize.css/normalize.css';
 @import '../../node_modules/skeleton.css/skeleton.css';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands';

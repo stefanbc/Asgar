@@ -54,30 +54,30 @@
     }
   ],
   "scripts": {
-    "clean": "rimraf ./assets/css && rimraf ./assets/js && rimraf ./asgar.zip",
-    "mkdir": "mkdirp -p ./assets/css && mkdirp -p ./assets/js",
+    "clean": "rimraf ./assets/css && rimraf ./assets/fonts && rimraf ./assets/js && rimraf ./asgar.zip",
+    "mkdir": "mkdirp -p ./assets/css && mkdirp -p ./assets/js && mkdirp -p ./assets/fonts",
     "zip": "zip -r9 asgar.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
     "validate": "gscan ./asgar.zip -z",
-    "build-css-dev": "parcel ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "build-css-prod": "parcel build ./assets/scss/index.scss ./assets/scss/vendor.scss --no-source-maps -d ./assets/css",
-    "build-js-dev": "parcel ./assets/source/index.js --no-source-maps -d ./assets/js",
-    "build-js-prod": "parcel build ./assets/source/index.js --no-source-maps -d ./assets/js",
-    "watch": "parcel watch ./assets/scss/*.scss --no-source-maps -d ./assets/css",
-    "dev": "yarn clean && yarn mkdir && yarn build-css-dev && yarn build-js-dev",
-    "prod": "yarn clean && yarn mkdir && yarn build-css-prod && yarn build-js-prod",
-    "deploy": "yarn prod && yarn zip && yarn validate",
-    "deploy-dev": "yarn dev && yarn zip"
+    "copy-fonts": "cp -a ./node_modules/@fortawesome/fontawesome-free/webfonts/. ./assets/fonts",
+    "build-vendor": "parcel build ./assets/scss/vendor.scss --no-source-maps -d ./assets/css --public-url /assets/fonts/",
+    "cleanup-fonts": "rimraf ./assets/fonts/* && cp -r ./assets/css/fa-* ./assets/fonts && rimraf ./assets/css/fa-*",
+    "css-vendor": "yarn copy-fonts && yarn build-vendor && yarn cleanup-fonts",
+    "css-index": "parcel build ./assets/scss/index.scss --no-source-maps -d ./assets/css",
+    "js": "parcel build ./assets/source/index.js --no-source-maps -d ./assets/js",
+    "prod": "yarn clean && yarn mkdir && yarn css-vendor && yarn css-index && yarn js",
+    "deploy": "yarn prod && yarn zip && yarn validate"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^3.3.1",
+    "gscan": "^3.3.3",
     "mkdirp": "^1.0.3",
     "parcel-bundler": "^1.12.4",
     "rimraf": "^3.0.2",
-    "sass": "^1.25.0"
+    "sass": "^1.26.1"
   },
   "config": {
     "posts_per_page": 5,
