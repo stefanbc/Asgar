@@ -1,4 +1,4 @@
-Asgar [![Build Status](https://travis-ci.com/stefanbc/Asgar.svg?branch=master)](https://travis-ci.com/stefanbc/Asgar) [![Maintainability](https://api.codeclimate.com/v1/badges/db551b4c7a25f474e729/maintainability)](https://codeclimate.com/github/stefanbc/Asgar/maintainability) [![Known Vulnerabilities](https://snyk.io/test/github/stefanbc/Asgar/badge.svg?targetFile=package.json)](https://snyk.io/test/github/stefanbc/Asgar?targetFile=package.json)
+Asgar [![Build Status](https://travis-ci.com/stefanbc/Asgar.svg?branch=master)](https://travis-ci.com/stefanbc/Asgar) [![Maintainability](https://api.codeclimate.com/v1/badges/db551b4c7a25f474e729/maintainability)](https://codeclimate.com/github/stefanbc/Asgar/maintainability) [![Known Vulnerabilities](https://snyk.io/test/github/stefanbc/Asgar/badge.svg?targetFile=package.json)](https://snyk.io/test/github/stefanbc/Asgar?targetFile=package.json) ![Demo Deploy Theme](https://github.com/stefanbc/Asgar/workflows/Demo%20Deploy%20Theme/badge.svg)
 ==
 
 A two column, free and open source theme for Ghost.
