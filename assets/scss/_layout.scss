@@ -290,8 +290,12 @@ main {
     }
 
     .blog-navigation {
-        .page-number {
-            margin: 0 2rem;
+        .pagination {
+            text-align: center;
+
+            .page-number {
+                margin: 0 2rem;
+            }
         }
     }
 }
