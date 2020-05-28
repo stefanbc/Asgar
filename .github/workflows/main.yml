@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
+      - name: Replace custom api
+        uses: wei/wget@v1
+        with:
+          args: -O api.hbs ${{ secrets.GHOST_CUSTOM_API }}
       - uses: TryGhost/action-deploy-theme@v1.0.0
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
