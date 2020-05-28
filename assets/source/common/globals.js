@@ -1,3 +1,3 @@
 export const GLOBALS = {
-    api: `${window.location.origin}/custom/api`
+  api: `${window.location.origin}/custom/api`,
 };

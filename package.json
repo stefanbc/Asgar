@@ -69,6 +69,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "highlight.js": "^10.0.3",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
