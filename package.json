@@ -54,17 +54,17 @@
     }
   ],
   "scripts": {
-    "clean": "rimraf ./assets/css && rimraf ./assets/fonts && rimraf ./assets/js && rimraf ./asgar.zip",
-    "mkdir": "mkdirp -p ./assets/css && mkdirp -p ./assets/js && mkdirp -p ./assets/fonts",
-    "zip": "zip -r9 asgar.zip . -x *.cache* *.git* *.vscode* *.sass-cache* *node_modules/\\*",
+    "clean": "rm -rf ./assets/css ./assets/fonts ./assets/js ./asgar.zip",
+    "folders": "mkdir ./assets/css ./assets/js ./assets/fonts",
+    "zip": "zip -r9 asgar.zip . -x '*source*' '*.cache*' '*.git*' '*.vscode*' '*.sass-cache*' *node_modules/\\*",
     "validate": "gscan ./asgar.zip -z",
     "copy-fonts": "cp -a ./node_modules/@fortawesome/fontawesome-free/webfonts/. ./source/fonts",
     "build-vendor": "parcel build ./source/scss/vendor.scss --no-source-maps -d ./assets/css --public-url /assets/fonts/",
-    "cleanup-fonts": "rimraf ./assets/fonts/* && rimraf ./source/fonts && cp -r ./assets/css/fa-* ./assets/fonts && rimraf ./assets/css/fa-*",
+    "cleanup-fonts": "rm -rf ./assets/fonts/* ./source/fonts && cp -r ./assets/css/fa-* ./assets/fonts && rm -rf ./assets/css/fa-*",
     "css-vendor": "yarn copy-fonts && yarn build-vendor && yarn cleanup-fonts",
     "css-index": "parcel build ./source/scss/index.scss --no-source-maps -d ./assets/css",
     "js": "parcel build ./source/js/index.js --no-source-maps -d ./assets/js",
-    "prod": "yarn clean && yarn mkdir && yarn css-vendor && yarn css-index && yarn js",
+    "prod": "yarn clean && yarn folders && yarn css-vendor && yarn css-index && yarn js",
     "deploy": "yarn prod && yarn zip && yarn validate"
   },
   "dependencies": {
@@ -75,9 +75,7 @@
   },
   "devDependencies": {
     "gscan": "^3.5.4",
-    "mkdirp": "^1.0.4",
     "parcel-bundler": "^1.12.4",
-    "rimraf": "^3.0.2",
     "sass": "^1.26.8"
   },
   "config": {
