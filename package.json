@@ -68,15 +68,15 @@
     "deploy": "yarn prod && yarn zip && yarn validate"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0",
-    "highlight.js": "^10.0.3",
+    "@fortawesome/fontawesome-free": "^5.13.1",
+    "highlight.js": "^10.1.1",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
     "gscan": "^3.5.4",
-    "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.8"
+    "parcel": "^1.12.4",
+    "sass": "^1.26.10"
   },
   "config": {
     "posts_per_page": 5,
