@@ -69,12 +69,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
-    "highlight.js": "^10.1.1",
+    "highlight.js": "^10.1.2",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^3.5.4",
+    "gscan": "^3.5.5",
     "parcel": "^1.12.4",
     "sass": "^1.26.10"
   },
