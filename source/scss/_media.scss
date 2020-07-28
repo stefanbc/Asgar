@@ -1,5 +1,9 @@
 //media queries
 @media all and (max-width: 480px) {
+    .row-flex {
+        flex-direction: column;
+    }
+
     .site-header {
         margin: 10rem 0 6rem;
     }

@@ -170,3 +170,12 @@ blockquote {
 .text-underline {
     text-decoration: underline;
 }
+
+.row-flex {
+    display: flex;
+    flex-direction: row;
+
+    > div {
+        flex: 1 1 auto;
+    }
+}

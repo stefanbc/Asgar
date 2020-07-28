@@ -103,6 +103,10 @@ body {
                         li {
                             border-color: $dm-grey;
                         }
+
+                        &.share {
+                            background: $dm-dark;
+                        }
                     }
                 }
             }

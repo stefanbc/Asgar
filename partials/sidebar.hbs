@@ -1,3 +1,9 @@
+<section class="widget share">
+    <div class="widget-content">
+        {{> "share"}}
+    </div>
+</section>
+
 {{#if primary_tag}}
 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit=@config.posts_per_page as |related_posts|}}
 {{#if related_posts}}
@@ -19,11 +25,22 @@
 {{/get}}
 {{/if}}
 
-<section class="widget share">
+{{#if tags}}
+<section class="widget tags">
+    <h6 class="widget-title">Tags</h6>
     <div class="widget-content">
-        {{> "share"}}
+        <section class="post-tags">
+            <ul>
+                {{#foreach tags}}
+                <li>
+                    <a href="{{url}}" title="{{name}}">{{name}}</a>
+                </li>
+                {{/foreach}}
+            </ul>
+        </section>
     </div>
 </section>
+{{/if}}
 
 <section class="widget recent-posts">
     <h6 class="widget-title">Recent posts</h6>
@@ -41,20 +58,3 @@
         {{/get}}
     </div>
 </section>
-
-{{#if tags}}
-<section class="widget tags">
-    <h6 class="widget-title">Tags</h6>
-    <div class="widget-content">
-        <section class="post-tags">
-            <ul>
-                {{#foreach tags}}
-                <li>
-                    <a href="{{url}}" title="{{name}}">{{name}}</a>
-                </li>
-                {{/foreach}}
-            </ul>
-        </section>
-    </div>
-</section>
-{{/if}}

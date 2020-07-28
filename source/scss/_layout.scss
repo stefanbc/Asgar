@@ -185,6 +185,9 @@ main {
         }
 
         .sidebar {
+            height: 100%;
+            margin-top: 30px;
+
             .widget {
                 margin-bottom: 4rem;
 
@@ -193,16 +196,25 @@ main {
                     border-bottom: 1px dotted $grey;
                 }
 
-                .post-share {
-                    ul {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr 1fr 1fr;
-                        border-bottom: 1px dotted $grey;
+                &.share {
+                    position: sticky;
+                    top: -1px;
+                    background: $white;
+                    margin-left: -1px;
+                    padding-top: 15px;
 
-                        li {
-                            text-align: center;
-                            border-bottom: 0;
-                            font-size: 1.6em;
+                    .post-share {
+                        ul {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                            border-bottom: 1px dotted $grey;
+
+                            li {
+                                text-align: center;
+                                border-bottom: 0;
+                                font-size: 1.6em;
+                                margin: 0;
+                            }
                         }
                     }
                 }
