@@ -34,34 +34,41 @@ export class Asgar {
    */
   init() {
     document.addEventListener("DOMContentLoaded", () => {
-      if (this.getCurrentPage()) {
-        this.data = JSON.parse(this.storage.get("asg_data"));
-
-        this.currentPage = this.getCurrentPage();
-        this.toggleLoading();
-
-        if (this.data) {
-          this.addData(this.data);
-        } else {
-          this.http.get(this.globals.api).then((data) => {
-            this.data = data;
-            this.storage.set("asg_data", JSON.stringify(data));
-            this.addData(data);
-          }, (error) => {
-            console.log(error);
-          });
-        }
-      }
-
-      this.initEvents();
+      this._loadData();
+      this._loadEvents();
     });
+  }
+
+  /**
+   * @description Loads data for pages that require it
+   * @memberof Asgar
+   */
+  _loadData() {
+    if (this.getCurrentPage()) {
+      this.data = JSON.parse(this.storage.get("asg_data"));
+
+      this.currentPage = this.getCurrentPage();
+      this.toggleLoading();
+
+      if (this.data) {
+        this.addData(this.data);
+      } else {
+        this.http.get(this.globals.api).then((data) => {
+          this.data = data;
+          this.storage.set("asg_data", JSON.stringify(data));
+          this.addData(data);
+        }, (error) => {
+          console.log(error);
+        });
+      }
+    }
   }
 
   /**
    * @description Initialize global events
    * @memberof Asgar
    */
-  initEvents() {
+  _loadEvents() {
     this.darkModeEvent();
     this.codeHighlight();
   }
@@ -128,7 +135,7 @@ export class Asgar {
   }
 
   /**
-   * @description Add a child element to it"s parent element
+   * @description Add a child element to it's parent element
    * @param {*} childTemplate
    * @param {*} parentElement
    * @param {string} [childType="row"]
