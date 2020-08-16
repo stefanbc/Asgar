@@ -25,6 +25,7 @@ export class Asgar {
     this.globals = GLOBALS;
     this.pages = PAGES;
     this.utils = new Utils();
+    this.data = "";
   }
 
   /**
@@ -34,16 +35,22 @@ export class Asgar {
   init() {
     document.addEventListener("DOMContentLoaded", () => {
       if (this.getCurrentPage()) {
-        this.http.get(this.globals.api).then(
-          (data) => {
-            this.currentPage = this.getCurrentPage();
-            this.toggleLoading();
+        this.data = JSON.parse(this.storage.get("asg_data"));
+
+        this.currentPage = this.getCurrentPage();
+        this.toggleLoading();
+
+        if (this.data) {
+          this.addData(this.data);
+        } else {
+          this.http.get(this.globals.api).then((data) => {
+            this.data = data;
+            this.storage.set("asg_data", JSON.stringify(data));
             this.addData(data);
-          },
-          (error) => {
+          }, (error) => {
             console.log(error);
-          }
-        );
+          });
+        }
       }
 
       this.initEvents();
@@ -69,14 +76,14 @@ export class Asgar {
       setDarkMode = (status) => {
         this.dom.toggle(colorSwitcher, "fa-flip-horizontal");
         this.dom.toggle(body, "dark-mode");
-        this.storage.set("asgar-dm", status);
+        this.storage.set("asg_dm", status);
       };
 
     // Detect if the system is in dark mode on first visit or if the user turned on dark mode
     if (
       (this.utils.checkSystemDarkMode() &&
-        this.storage.get("asgar-dm") === null) ||
-      this.storage.get("asgar-dm")
+        this.storage.get("asg_dm") === null) ||
+      this.storage.get("asg_dm")
     ) {
       setDarkMode(true);
     }
