@@ -74,7 +74,7 @@
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^3.5.5",
+    "gscan": "^3.5.6",
     "parcel": "^1.12.4",
     "sass": "^1.26.10"
   },
