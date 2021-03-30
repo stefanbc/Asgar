@@ -3,7 +3,7 @@
  * @export
  * @class Utils
  */
-export class Utils {
+export default class Utils {
   /**
    * Creates an instance of Utils.
    * @memberof Utils

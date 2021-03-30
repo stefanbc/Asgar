@@ -3,7 +3,7 @@
  * @export
  * @class Http
  */
-export class Http {
+export default class Http {
   /**
    * Creates an instance of Http.
    * @memberof Http

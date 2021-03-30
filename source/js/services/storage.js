@@ -3,7 +3,7 @@
  * @export
  * @class Storage
  */
-export class Storage {
+export default class Storage {
   /**
    * Creates an instance of Storage.
    * @memberof Storage

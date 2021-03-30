@@ -12,7 +12,7 @@ import { Utils } from "./common/utils";
  * @export
  * @class Asgar
  */
-export class Asgar {
+export default class Asgar {
   /**
    * Creates an instance of Asgar.
    * @memberof Asgar

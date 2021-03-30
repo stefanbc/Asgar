@@ -5,8 +5,8 @@
   "homepage": "https://github.com/stefanbc/Asgar#readme",
   "version": "1.0.8",
   "engines": {
-    "ghost": ">=3.0.0",
-    "ghost-api": "v3"
+    "ghost": ">=4.0.0",
+    "ghost-api": "v4"
   },
   "license": "MIT",
   "screenshots": {
@@ -68,15 +68,15 @@
     "deploy": "yarn prod && yarn zip && yarn validate"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
-    "highlight.js": "^10.4.1",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "highlight.js": "^10.7.1",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
   "devDependencies": {
-    "gscan": "^3.6.1",
+    "gscan": "^4.0.1",
     "parcel": "^1.12.4",
-    "sass": "^1.30.0"
+    "sass": "^1.32.8"
   },
   "config": {
     "posts_per_page": 5,

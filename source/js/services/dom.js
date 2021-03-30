@@ -3,7 +3,7 @@
  * @export
  * @class DOM
  */
-export class DOM {
+export default class DOM {
   /**
    * Creates an instance of DOM.
    * @memberof DOM
