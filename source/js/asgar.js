@@ -1,11 +1,10 @@
-import hljs from "highlight.js";
-import { DOM } from "./services/dom";
-import { Http } from "./services/http";
-import { Storage } from "./services/storage";
+import DOM from "./services/dom";
+import Http from "./services/http";
+import Storage from "./services/storage";
 
 import { GLOBALS } from "./common/globals";
 import { PAGES } from "./common/pages";
-import { Utils } from "./common/utils";
+import Utils from "./common/utils";
 
 /**
  * @description Main class for the Asgar Ghost Theme
@@ -70,7 +69,6 @@ export default class Asgar {
    */
   _loadEvents() {
     this.darkModeEvent();
-    this.codeHighlight();
   }
 
   /**
@@ -97,16 +95,6 @@ export default class Asgar {
 
     colorSwitcher.addEventListener("click", () => {
       setDarkMode(!this.dom.has(body, "dark-mode"));
-    });
-  }
-
-  /**
-   * @description Adds code highlight to code blocks
-   * @memberof Asgar
-   */
-  codeHighlight() {
-    this.dom.getAll("pre code").forEach((block) => {
-      hljs.highlightBlock(block);
     });
   }
 
