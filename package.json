@@ -68,7 +68,7 @@
     "deploy": "yarn prod && yarn zip && yarn validate"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "normalize.css": "^8.0.1",
     "skeleton.css": "^2.0.4"
   },
