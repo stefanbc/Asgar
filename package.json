@@ -75,7 +75,7 @@
   "devDependencies": {
     "gscan": "^4.2.1",
     "parcel": "^1.12.4",
-    "sass": "^1.38.1"
+    "sass": "^1.38.2"
   },
   "config": {
     "posts_per_page": 5,
