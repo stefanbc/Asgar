@@ -30,6 +30,14 @@
     </div>
     {{#if "page"}}
     <script src="{{asset "js/index.js"}}"></script>
+    <script rel="dns-prefetch" src="//cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Playfair Display']
+            }
+        });
+    </script>
     {{/if}}
     {{ghost_foot}}
   </body>
