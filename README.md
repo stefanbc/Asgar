@@ -1,12 +1,12 @@
-Asgar
-==
-
-A two column, free and open source theme for Ghost.
+# <p align="center">Asgar</p>
 
 [![Build Status](https://travis-ci.com/stefanbc/Asgar.svg?branch=master)](https://travis-ci.com/stefanbc/Asgar) [![Maintainability](https://api.codeclimate.com/v1/badges/db551b4c7a25f474e729/maintainability)](https://codeclimate.com/github/stefanbc/Asgar/maintainability) [![Known Vulnerabilities](https://snyk.io/test/github/stefanbc/Asgar/badge.svg?targetFile=package.json)](https://snyk.io/test/github/stefanbc/Asgar?targetFile=package.json) ![Demo Deploy Theme](https://github.com/stefanbc/Asgar/workflows/Demo%20Deploy%20Theme/badge.svg) ![Code scanning](https://github.com/stefanbc/Asgar/workflows/Code%20scanning/badge.svg)
 
-Installation
---
+A two column, free and open source theme for Ghost.
+
+![asgar stefancosma xyz_ (1)](https://user-images.githubusercontent.com/1278794/133379640-a6988b62-c5b4-45e1-9b9e-8b985e3e836d.png)
+
+## Installation
 
 1. Download the theme from GitHub.
 2. Upload the theme as described in the [Ghost Documentation](https://docs.ghost.org/concepts/config/).
@@ -28,8 +28,7 @@ you'll first need to add this to your `routes.yaml` file, bellow the `routes` ke
 5. Additionally you should replace all the image in the `assets/images` folder. You can use [this useful tool](http://realfavicongenerator.net/).
 6. After you've completed the steps above, you can zip the theme and upload it.
 
-Development
---
+## Development
 
 You can install all the theme dependencies using:
 
