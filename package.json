@@ -74,7 +74,7 @@
   },
   "devDependencies": {
     "gscan": "^4.6.0",
-    "parcel": "^1.12.4",
+    "parcel": "^2.3.0",
     "sass": "^1.43.2"
   },
   "config": {
